@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, CreditCard, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase } from 'lucide-react';
+import { ChevronDown, ChevronRight, CreditCard, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase } from 'lucide-react';
 
 const products = [
     {
@@ -39,7 +39,7 @@ const solutions = [
 const developers = [
     { title: "Documentación", icon: <Terminal /> },
     { title: "Referencias API", icon: <FileText /> },
-    { title: "Estado del sistema", icon: <ActivityIcon /> }, // Placeholder for custom icon
+    { title: "Estado del sistema", icon: <ActivityIcon /> },
 ];
 
 // Helper icon
@@ -62,57 +62,62 @@ const Navbar: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/60"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="flex justify-between items-center h-16 md:h-20">
+                <div className="flex items-center h-16 md:h-20">
 
-                    {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center cursor-pointer">
+                    {/* Logo - Left Aligned */}
+                    <div className="flex-shrink-0 flex items-center cursor-pointer mr-8 lg:mr-12">
                         <span className="text-2xl font-black text-gray-900 tracking-tighter hover:opacity-75 transition-opacity">
                             ciberbug
                         </span>
                     </div>
 
-                    {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-1 lg:space-x-8">
+                    {/* Desktop Menu - Left Aligned next to Logo */}
+                    <div className="hidden md:flex space-x-1 lg:space-x-6">
                         <NavItem
                             title="Productos"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('products')}
+                            hasChevron={true}
                         />
                         <NavItem
                             title="Soluciones"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('solutions')}
+                            hasChevron={true}
                         />
                         <NavItem
                             title="Desarrolladores"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('developers')}
+                            hasChevron={true}
                         />
                         <NavItem
                             title="Recursos"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('resources')}
+                            hasChevron={true}
                         />
                         <NavItem
                             title="Tarifas"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('pricing')}
+                            hasChevron={false}
                         />
                     </div>
 
-                    {/* Actions */}
-                    <div className="hidden md:flex items-center space-x-4">
-                        <button className="text-gray-900 font-medium hover:text-gray-600 transition-colors">
+                    {/* Actions - Pushed to the right */}
+                    <div className="hidden md:flex items-center space-x-4 ml-auto">
+                        <button className="text-gray-900 font-medium hover:text-gray-600 transition-colors px-3 py-2">
                             Inicia sesión
                         </button>
                         <button className="bg-[#635BFF] text-white px-4 py-2 rounded-full font-medium hover:bg-[#5851df] transition-colors shadow-sm flex items-center group">
                             Contacta con ventas
-                            <ChevronDown className="ml-1 w-4 h-4 rotate-[-90deg] group-hover:bg-white/20 rounded-full transition-all" />
+                            <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
 
                     {/* Mobile Menu Icon (Placeholder) */}
-                    <div className="md:hidden">
+                    <div className="md:hidden ml-auto">
                         <button className="text-gray-900 p-2">
                             <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
                             <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
@@ -126,10 +131,11 @@ const Navbar: React.FC = () => {
             <AnimatePresence>
                 {activeMenu && activeMenu !== 'pricing' && (
                     <motion.div
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
+                        initial={{ opacity: 0, y: -10, rotateX: -5 }}
+                        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                        exit={{ opacity: 0, y: -10, rotateX: -5 }}
                         transition={{ duration: 0.2 }}
+                        style={{ transformOrigin: "top center" }}
                         className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-xl overflow-hidden"
                     >
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -209,17 +215,21 @@ const Navbar: React.FC = () => {
     );
 };
 
-// Removed 'hasDropdown' from props as it is unused, though it might be useful for extensions.
-// If needed for styling logic: className={`relative px-3 py-2 cursor-pointer group ${!hasDropdown ? '...' : ''}`}
-const NavItem = ({ title, activeInfo, onEnter }: { title: string, activeInfo: string | null, onEnter: () => void }) => {
+const NavItem = ({ title, activeInfo, onEnter, hasChevron = false }: { title: string, activeInfo: string | null, onEnter: () => void, hasChevron?: boolean }) => {
     return (
         <div
-            className="relative px-3 py-2 cursor-pointer group"
+            className="relative px-3 py-2 cursor-pointer group flex items-center gap-1"
             onMouseEnter={onEnter}
         >
             <span className={`text-base font-medium transition-colors ${activeInfo ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
                 {title}
             </span>
+            {hasChevron && (
+                <ChevronDown
+                    className={`w-3.5 h-3.5 transition-all duration-200 ${activeInfo ? 'text-gray-900 rotate-180 opacity-100' : 'text-gray-500 opacity-60 group-hover:opacity-100 group-hover:text-gray-900'
+                        }`}
+                />
+            )}
         </div>
     );
 }
