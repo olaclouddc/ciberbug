@@ -22,12 +22,12 @@ const Hero: React.FC = () => {
                         }}
                         initial={{ y: 0, x: 0, rotate: 0 }}
                         animate={{
-                            y: [-10, 10, -10],
-                            x: [-5, 5, -5],
-                            rotate: [0, 1, 0]
+                            y: [-20, 20, -20],
+                            x: [-10, 10, -10],
+                            rotate: [0, 1.5, 0]
                         }}
                         transition={{
-                            duration: 20,
+                            duration: 15,
                             repeat: Infinity,
                             repeatType: "reverse",
                             ease: "easeInOut"
