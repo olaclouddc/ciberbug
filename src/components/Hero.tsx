@@ -7,28 +7,33 @@ const Hero: React.FC = () => {
         <div className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40">
             {/* Stripe-style slanted background image */}
             <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
-                <motion.div
-                    className="absolute -top-[30%] -right-[10%] w-[110%] h-[150%] bg-no-repeat bg-right-top"
+                <div
+                    className="absolute -top-[30%] -right-[10%] w-[110%] h-[150%]"
                     style={{
-                        backgroundImage: 'url("/bg-hero.jpg")',
-                        backgroundSize: 'contain',
+                        transform: 'skewY(-12deg)',
                         transformOrigin: 'top right',
                     }}
-                    initial={{ transform: "perspective(1000px) rotateX(10deg) skewY(-12deg)" }}
-                    animate={{
-                        transform: [
-                            "perspective(1000px) rotateX(10deg) skewY(-12deg) translateY(0px)",
-                            "perspective(1000px) rotateX(10deg) skewY(-12deg) translateY(-15px) translateX(-5px)",
-                            "perspective(1000px) rotateX(10deg) skewY(-12deg) translateY(0px)"
-                        ]
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        repeatType: "mirror",
-                        ease: "easeInOut"
-                    }}
-                />
+                >
+                    <motion.div
+                        className="w-full h-full bg-no-repeat bg-right-top"
+                        style={{
+                            backgroundImage: 'url("/bg-hero.jpg")',
+                            backgroundSize: 'contain',
+                        }}
+                        initial={{ y: 0, x: 0, rotate: 0 }}
+                        animate={{
+                            y: [-10, 10, -10],
+                            x: [-5, 5, -5],
+                            rotate: [0, 1, 0]
+                        }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "easeInOut"
+                        }}
+                    />
+                </div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
