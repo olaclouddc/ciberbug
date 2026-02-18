@@ -46,7 +46,9 @@ const Footer: React.FC = () => {
                 <div className="mt-8 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-400 text-sm">&copy; 2024 Ciberbug. Todos los derechos reservados.</p>
                     <div className="flex space-x-6 mt-4 md:mt-0">
-                        {/* Social icons would go here */}
+                        <a href="#" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Aviso legal</a>
+                        <a href="#" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Privacidad Datos</a>
+                        <a href="#" className="text-gray-400 hover:text-gray-600 text-sm transition-colors">Cookies</a>
                     </div>
                 </div>
             </div>
