@@ -78,13 +78,13 @@ const Navbar: React.FC = () => {
             {/* Stripe-like bottom border line - kept full width but faded */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/0 pointer-events-auto"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-14 md:h-16 flex items-center pointer-events-auto"
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
                 onMouseEnter={handleNavMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 {/* Island Background */}
                 <div
-                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-lg shadow-sm transition-all duration-200 -z-10 ${activeMenu || isHovered ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-t-lg rounded-b-none transition-all duration-200 -z-10 ${activeMenu || isHovered ? "opacity-100" : "opacity-0"}`}
                 ></div>
 
                 <div className="w-full flex items-center h-full">
