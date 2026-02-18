@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className="absolute top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none"
+            className="absolute top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none pt-6"
         >
             {/* Stripe-like bottom border line - kept full width but faded */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/0 pointer-events-auto"></div>
@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
             >
                 {/* Island Background */}
                 <div
-                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-full shadow-sm transition-all duration-300 -z-10 ${activeMenu || isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-lg shadow-sm transition-all duration-300 -z-10 ${activeMenu || isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
                 ></div>
 
                 <div className="w-full flex items-center h-full">
