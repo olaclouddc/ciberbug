@@ -47,6 +47,7 @@ function ActivityIcon() { return <div className="w-5 h-5 rounded-full border-2 b
 
 const Navbar: React.FC = () => {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
+    const [isHovered, setIsHovered] = useState(false);
 
     // Track the direction of the slide
     const menuOrder = ['products', 'solutions', 'developers', 'resources', 'pricing'];
@@ -61,17 +62,23 @@ const Navbar: React.FC = () => {
         setActiveMenu(menu);
     };
 
+    const handleNavMouseEnter = () => {
+        setIsHovered(true);
+    };
+
     const handleMouseLeave = () => {
         setActiveMenu(null);
+        setIsHovered(false);
     };
 
     return (
         <nav
             className="absolute top-0 left-0 right-0 z-50 transition-all duration-300"
+            onMouseEnter={handleNavMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className={`absolute inset-0 bg-white transition-opacity duration-300 ${activeMenu ? "opacity-100 shadow-sm" : "opacity-0"}`}
+                className={`absolute inset-0 bg-white transition-opacity duration-300 ${activeMenu || isHovered ? "opacity-100 shadow-sm" : "opacity-0"}`}
             ></div>
 
             {/* Stripe-like bottom border line */}
