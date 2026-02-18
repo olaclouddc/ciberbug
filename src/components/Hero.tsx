@@ -4,11 +4,12 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
     return (
-        <div className="relative overflow-hidden bg-white pt-16 pb-32 lg:pt-24 lg:pb-40">
-            {/* Background decoration */}
-            <div className="absolute top-0 right-0 -z-10 opacity-30 transform translate-x-1/3 -translate-y-1/4">
-                <div className="w-[800px] h-[800px] bg-gradient-to-br from-brand-pink/40 to-brand-purple/40 rounded-full blur-3xl"></div>
-            </div>
+        <div
+            className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40 bg-cover bg-center"
+            style={{ backgroundImage: 'url("/bg-hero.jpg")' }}
+        >
+            {/* Overlay to ensure text readability if needed */}
+            <div className="absolute inset-0 bg-white/40 -z-10"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
