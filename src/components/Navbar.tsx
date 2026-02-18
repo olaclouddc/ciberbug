@@ -71,12 +71,8 @@ const Navbar: React.FC = () => {
             onMouseLeave={handleMouseLeave}
         >
             <div
-                className={`absolute inset-0 bg-cover bg-top transition-all duration-300 ${activeMenu ? "opacity-100 shadow-sm" : "opacity-0"}`}
-                style={{ backgroundImage: 'url("/bg-hero.jpg")' }}
-            >
-                {/* White overlay to make it match the Stripe vibe when active */}
-                <div className="absolute inset-0 bg-white/90"></div>
-            </div>
+                className={`absolute inset-0 bg-white transition-opacity duration-300 ${activeMenu ? "opacity-100 shadow-sm" : "opacity-0"}`}
+            ></div>
 
             {/* Stripe-like bottom border line */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/60"></div>

@@ -4,12 +4,19 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
     return (
-        <div
-            className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40 bg-cover bg-center"
-            style={{ backgroundImage: 'url("/bg-hero.jpg")' }}
-        >
-            {/* Overlay to ensure text readability if needed */}
-            <div className="absolute inset-0 bg-white/40 -z-10"></div>
+        <div className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40 bg-white">
+            {/* Stripe-style slanted background image */}
+            <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
+                <div
+                    className="absolute -top-[10%] -right-[15%] w-[100%] h-[120%] bg-no-repeat bg-right-top"
+                    style={{
+                        backgroundImage: 'url("/bg-hero.jpg")',
+                        backgroundSize: 'contain',
+                        transform: 'skewY(-12deg)',
+                        transformOrigin: 'top right',
+                    }}
+                ></div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
