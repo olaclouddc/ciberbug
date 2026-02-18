@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
                 <div
                     className="absolute -top-[30%] -right-[10%] w-[110%] h-[150%]"
                     style={{
-                        transform: 'skewY(-12deg)',
+                        transform: 'skewY(-18deg)',
                         transformOrigin: 'top right',
                     }}
                 >
