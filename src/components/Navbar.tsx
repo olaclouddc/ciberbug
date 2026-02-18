@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+            className="absolute top-0 left-0 right-0 z-50 transition-all duration-300"
             onMouseLeave={handleMouseLeave}
         >
             <div className={`absolute inset-0 bg-white/0 transition-all duration-300 ${activeMenu ? "bg-white shadow-sm" : ""}`}></div>
