@@ -158,7 +158,7 @@ const Navbar: React.FC = () => {
 
             {/* Sliding Dropdown Container */}
             <div className="absolute top-full left-0 right-0 flex justify-center pointer-events-none">
-                <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pointer-events-auto">
+                <div className="w-full max-w-7xl pointer-events-auto">
                     <AnimatePresence>
                         {activeMenu && activeMenu !== 'pricing' && (
                             <motion.div
