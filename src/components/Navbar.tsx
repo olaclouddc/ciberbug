@@ -65,14 +65,14 @@ const Navbar: React.FC = () => {
                 <div className="flex items-center h-16 md:h-20">
 
                     {/* Logo - Left Aligned */}
-                    <div className="flex-shrink-0 flex items-center cursor-pointer mr-8 lg:mr-12">
+                    <div className="flex-shrink-0 flex items-center cursor-pointer mr-6 lg:mr-10">
                         <span className="text-2xl font-black text-gray-900 tracking-tighter hover:opacity-75 transition-opacity">
                             ciberbug
                         </span>
                     </div>
 
-                    {/* Desktop Menu - Left Aligned next to Logo */}
-                    <div className="hidden md:flex space-x-1 lg:space-x-6">
+                    {/* Desktop Menu - Left Aligned next to Logo with smaller font */}
+                    <div className="hidden md:flex space-x-1 lg:space-x-4">
                         <NavItem
                             title="Productos"
                             activeInfo={activeMenu}
@@ -107,10 +107,10 @@ const Navbar: React.FC = () => {
 
                     {/* Actions - Pushed to the right */}
                     <div className="hidden md:flex items-center space-x-4 ml-auto">
-                        <button className="text-gray-900 font-medium hover:text-gray-600 transition-colors px-3 py-2">
+                        <button className="text-gray-900 text-sm font-medium hover:text-gray-600 transition-colors px-3 py-2">
                             Inicia sesión
                         </button>
-                        <button className="bg-[#635BFF] text-white px-4 py-2 rounded-full font-medium hover:bg-[#5851df] transition-colors shadow-sm flex items-center group">
+                        <button className="bg-[#635BFF] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#5851df] transition-colors shadow-sm flex items-center group">
                             Contacta con ventas
                             <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
@@ -164,15 +164,15 @@ const Navbar: React.FC = () => {
                                     <div className="col-span-1">
                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por etapa</h4>
                                         <ul className="space-y-3">
-                                            <li className="text-gray-900 font-medium hover:text-[#635BFF] cursor-pointer">Grandes empresas</li>
-                                            <li className="text-gray-900 font-medium hover:text-[#635BFF] cursor-pointer">Startups</li>
+                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer">Grandes empresas</li>
+                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer">Startups</li>
                                         </ul>
                                     </div>
                                     <div className="col-span-2">
                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por caso de uso</h4>
                                         <div className="grid grid-cols-2 gap-4">
                                             {solutions.map((sol, i) => (
-                                                <div key={i} className="flex items-center gap-2 text-gray-900 hover:text-[#635BFF] cursor-pointer font-medium">
+                                                <div key={i} className="flex items-center gap-2 text-gray-900 text-sm hover:text-[#635BFF] cursor-pointer font-medium">
                                                     {/* Icon placeholder could go here */}
                                                     {sol.title}
                                                 </div>
@@ -188,7 +188,7 @@ const Navbar: React.FC = () => {
                                         <div key={i} className="flex items-start gap-4 group cursor-pointer">
                                             <div className="text-gray-400 group-hover:text-[#635BFF] transition-colors">{dev.icon}</div>
                                             <div>
-                                                <h4 className="font-semibold text-gray-900 group-hover:text-[#635BFF] transition-colors">{dev.title}</h4>
+                                                <h4 className="font-semibold text-gray-900 text-sm group-hover:text-[#635BFF] transition-colors">{dev.title}</h4>
                                             </div>
                                         </div>
                                     ))}
@@ -198,11 +198,11 @@ const Navbar: React.FC = () => {
                             {activeMenu === 'resources' && (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 mb-2">Blog</h4>
+                                        <h4 className="font-semibold text-gray-900 text-sm mb-2">Blog</h4>
                                         <p className="text-sm text-gray-500">Noticias, actualizaciones y consejos de ingeniería.</p>
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-gray-900 mb-2">Guías</h4>
+                                        <h4 className="font-semibold text-gray-900 text-sm mb-2">Guías</h4>
                                         <p className="text-sm text-gray-500">Tutoriales detallados para empezar.</p>
                                     </div>
                                 </div>
@@ -221,7 +221,7 @@ const NavItem = ({ title, activeInfo, onEnter, hasChevron = false }: { title: st
             className="relative px-3 py-2 cursor-pointer group flex items-center gap-1"
             onMouseEnter={onEnter}
         >
-            <span className={`text-base font-medium transition-colors ${activeInfo ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
+            <span className={`text-sm font-medium transition-colors ${activeInfo === title.toLowerCase() || activeInfo ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
                 {title}
             </span>
             {hasChevron && (
