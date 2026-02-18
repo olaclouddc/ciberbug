@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
     return (
-        <div className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40 bg-white">
+        <div className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40">
             {/* Stripe-style slanted background image */}
             <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
                 <div
