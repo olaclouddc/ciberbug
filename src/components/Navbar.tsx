@@ -156,7 +156,7 @@ const Navbar: React.FC = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
-                                className="bg-white rounded-xl shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3)] border border-gray-100 overflow-hidden"
+                                className="bg-white rounded-b-2xl shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3)] overflow-hidden"
                             >
                                 <div className="relative overflow-hidden p-8">
                                     <AnimatePresence initial={false} mode="popLayout">
