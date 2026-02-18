@@ -73,20 +73,21 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className="absolute top-0 left-0 right-0 z-50 transition-all duration-300"
-            onMouseEnter={handleNavMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="absolute top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none"
         >
-            <div
-                className={`absolute inset-0 bg-white transition-opacity duration-300 ${activeMenu || isHovered ? "opacity-100 shadow-sm" : "opacity-0"}`}
-            ></div>
+            {/* Stripe-like bottom border line - kept full width but faded */}
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/0 pointer-events-auto"></div>
 
-            {/* Stripe-like bottom border line */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/60"></div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-16 md:h-20 flex items-center pointer-events-auto"
+                onMouseEnter={handleNavMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {/* Island Background */}
+                <div
+                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-full shadow-sm transition-all duration-300 -z-10 ${activeMenu || isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}
+                ></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="flex items-center h-16 md:h-20">
-
+                <div className="w-full flex items-center h-full">
                     {/* Logo - Left Aligned */}
                     <div className="flex-shrink-0 flex items-center cursor-pointer mr-6 lg:mr-10">
                         <span className="text-2xl font-black text-gray-900 tracking-tighter hover:opacity-75 transition-opacity">
