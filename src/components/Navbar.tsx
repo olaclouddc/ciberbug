@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
                         </span>
                     </div>
 
-                    {/* Desktop Menu - Left Aligned next to Logo with smaller font */}
+                    {/* Desktop Menu - Left Aligned next to Logo */}
                     <div className="hidden md:flex space-x-1 lg:space-x-4">
                         <NavItem
                             title="Productos"
@@ -221,12 +221,12 @@ const NavItem = ({ title, activeInfo, onEnter, hasChevron = false }: { title: st
             className="relative px-3 py-2 cursor-pointer group flex items-center gap-1"
             onMouseEnter={onEnter}
         >
-            <span className={`text-sm font-medium transition-colors ${activeInfo === title.toLowerCase() || activeInfo ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
+            <span className={`text-sm font-medium transition-colors ${activeInfo ? 'text-gray-900' : 'text-gray-900 hover:text-gray-900'}`}>
                 {title}
             </span>
             {hasChevron && (
                 <ChevronDown
-                    className={`w-3.5 h-3.5 transition-all duration-200 ${activeInfo ? 'text-gray-900 rotate-180 opacity-100' : 'text-gray-500 opacity-60 group-hover:opacity-100 group-hover:text-gray-900'
+                    className={`w-3.5 h-3.5 transition-all duration-200 ${activeInfo ? 'text-gray-900 rotate-180 opacity-100' : 'text-gray-900/40 group-hover:opacity-100 group-hover:text-gray-900'
                         }`}
                 />
             )}
