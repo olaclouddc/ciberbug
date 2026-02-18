@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
             {/* Stripe-style slanted background image */}
             <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
                 <div
-                    className="absolute -top-[30%] -right-[10%] w-[110%] h-[150%]"
+                    className="absolute -top-[30%] -right-[15%] w-[110%] h-[150%]"
                     style={{
                         transform: 'skewY(-12deg)',
                         transformOrigin: 'top right',
