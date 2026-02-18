@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
             <div className={`absolute inset-0 bg-white/0 transition-all duration-300 ${activeMenu ? "bg-white shadow-sm" : ""}`}></div>
 
             {/* Stripe-like bottom border line */}
-            <div className={`absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200 transition-opacity duration-300 ${activeMenu ? "opacity-100" : "opacity-0"}`}></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/60"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="flex justify-between items-center h-16 md:h-20">
