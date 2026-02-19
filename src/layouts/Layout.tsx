@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <main className="flex-grow w-full relative">
                 {/* Global Vertical Lines */}
                 <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
-                    <div className="border-x border-gray-100/50 h-full w-full mx-auto"></div>
+                    <div className="border-x border-gray-200 h-full w-full mx-auto"></div>
                 </div>
 
                 <div className="relative z-10">

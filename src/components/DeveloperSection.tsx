@@ -38,7 +38,7 @@ const DeveloperSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-gradient-to-br from-gray-900 to-brand-dark text-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
                 <div className="lg:grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Left Content */}

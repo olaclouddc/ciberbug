@@ -4,7 +4,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 const NewsSection: React.FC = () => {
     return (
         <section className="py-24 bg-white border-t border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
 
                 <div className="flex justify-between items-end mb-12">
                     <div>

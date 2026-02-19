@@ -35,7 +35,7 @@ const features = [
 const Features: React.FC = () => {
     return (
         <section className="py-24 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
 
                 <div className="mb-16">
                     <h2 className="text-brand-pink font-semibold tracking-wide uppercase text-sm mb-3">Plataforma Unificada</h2>
@@ -53,8 +53,8 @@ const Features: React.FC = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                             className={`rounded-2xl p-8 transition-all hover:shadow-xl ${feature.active
-                                    ? 'bg-brand-dark text-white'
-                                    : 'bg-white text-gray-900 border border-gray-100 hover:border-brand-pink/20'
+                                ? 'bg-brand-dark text-white'
+                                : 'bg-white text-gray-900 border border-gray-100 hover:border-brand-pink/20'
                                 }`}
                         >
                             <div className={`p-3 rounded-xl w-fit mb-6 ${feature.active ? 'bg-white/10' : 'bg-brand-pink/5'

@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24 relative">
                 <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
 
                     {/* Left Content */}

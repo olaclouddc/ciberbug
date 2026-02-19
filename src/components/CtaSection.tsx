@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const CtaSection: React.FC = () => {
     return (
         <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
                 <div className="bg-brand-gray/50 rounded-3xl p-8 md:p-16 relative overflow-hidden bg-gray-50">
                     <div className="lg:grid lg:grid-cols-2 gap-12 items-center">
                         <div className="relative z-10">
