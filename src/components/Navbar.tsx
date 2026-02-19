@@ -188,17 +188,17 @@ const Navbar: React.FC = () => {
                                         >
                                             {/* Products Content */}
                                             {activeMenu === 'products' && (
-                                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
                                                     {products.map((prod, i) => (
-                                                        <div key={i} className="group cursor-pointer">
+                                                        <div key={i} className={`group cursor-pointer px-4 ${i % 2 === 0 ? 'border-r border-gray-100' : ''} ${i === 1 ? 'lg:border-r border-gray-100' : ''}`}>
                                                             <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
                                                                 {prod.icon}
                                                                 {prod.title}
                                                             </div>
                                                             <p className="text-sm text-gray-500 mb-3">{prod.desc}</p>
-                                                            <ul className="divide-y divide-gray-100 border-t border-gray-100 mt-3 pt-1">
+                                                            <ul className="space-y-1">
                                                                 {prod.items.map((item, j) => (
-                                                                    <li key={j} className="text-sm text-gray-500 hover:text-gray-900 cursor-pointer py-2 block">{item}</li>
+                                                                    <li key={j} className="text-sm text-gray-500 hover:text-gray-900 cursor-pointer block py-1">{item}</li>
                                                                 ))}
                                                             </ul>
                                                         </div>
@@ -209,7 +209,7 @@ const Navbar: React.FC = () => {
                                             {/* Solutions Content */}
                                             {activeMenu === 'solutions' && (
                                                 <div className="grid grid-cols-3 gap-6 w-full">
-                                                    <div className="col-span-1 border-r border-gray-50">
+                                                    <div className="col-span-1 border-r border-gray-100">
                                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por etapa</h4>
                                                         <ul className="space-y-3">
                                                             <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer">Grandes empresas</li>
@@ -231,9 +231,9 @@ const Navbar: React.FC = () => {
 
                                             {/* Developers Content */}
                                             {activeMenu === 'developers' && (
-                                                <div className="grid grid-cols-2 gap-8 max-w-md">
+                                                <div className="grid grid-cols-2 gap-0 max-w-md">
                                                     {developers.map((dev, i) => (
-                                                        <div key={i} className="flex items-start gap-4 group cursor-pointer">
+                                                        <div key={i} className={`flex items-start gap-4 group cursor-pointer px-4 ${i % 2 === 0 ? 'border-r border-gray-100' : ''}`}>
                                                             <div className="text-gray-400 group-hover:text-[#635BFF] transition-colors">{dev.icon}</div>
                                                             <div>
                                                                 <h4 className="font-semibold text-gray-900 text-sm group-hover:text-[#635BFF] transition-colors">{dev.title}</h4>
@@ -245,12 +245,12 @@ const Navbar: React.FC = () => {
 
                                             {/* Resources Content */}
                                             {activeMenu === 'resources' && (
-                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
-                                                    <div>
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-2xl">
+                                                    <div className="md:border-r md:border-gray-100 md:pr-8">
                                                         <h4 className="font-semibold text-gray-900 text-sm mb-2">Blog</h4>
                                                         <p className="text-sm text-gray-500">Noticias, actualizaciones y consejos de ingeniería.</p>
                                                     </div>
-                                                    <div>
+                                                    <div className="md:pl-8">
                                                         <h4 className="font-semibold text-gray-900 text-sm mb-2">Guías</h4>
                                                         <p className="text-sm text-gray-500">Tutoriales detallados para empezar.</p>
                                                     </div>
