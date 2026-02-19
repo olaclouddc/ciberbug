@@ -10,10 +10,10 @@ const products = [
         items: ["Analiza tu sitio web", "Protección Wordpress", "Desinfección Wordpress", "Desinfección malware"]
     },
     {
-        title: "GDPR",
-        desc: "Protege los datos",
-        icon: <Shield className="text-brand-pink" />,
-        items: ["Cumplimiento legal", "Protección de datos"]
+        title: "Cloud",
+        desc: "Seguridad en la nube",
+        icon: <Cloud className="text-sky-500" />,
+        items: ["Certificado SSL", "Monitorización servidores", "Administración servidores"]
     },
     {
         title: "Email",
@@ -28,10 +28,10 @@ const products = [
         items: ["Phishing", "MFA"]
     },
     {
-        title: "Cloud",
-        desc: "Seguridad en la nube",
-        icon: <Cloud className="text-sky-500" />,
-        items: ["Cloud Architecture", "AWS/Azure/GCP Security"]
+        title: "GDPR",
+        desc: "Protege los datos",
+        icon: <Shield className="text-brand-pink" />,
+        items: ["Cumplimiento legal", "Protección de datos"]
     }
 ];
 
