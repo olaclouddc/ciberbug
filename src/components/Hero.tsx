@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
     return (
-        <div className="relative overflow-hidden pt-32 pb-48 lg:pt-64 lg:pb-64">
+        <div className="relative overflow-hidden pt-24 pb-32 lg:pt-40 lg:pb-48">
             {/* Vertical Layout Lines - Starts exactly at the horizontal header line */}
             <div className="absolute top-[60px] md:top-[68px] bottom-0 left-0 right-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
                 <div className="border-x border-gray-200 h-full w-full mx-auto"></div>
