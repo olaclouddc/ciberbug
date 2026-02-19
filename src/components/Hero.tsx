@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
     return (
-        <div className="relative overflow-hidden pt-32 pb-48 lg:pt-56 lg:pb-64">
+        <div className="relative overflow-hidden pt-32 pb-48 lg:pt-64 lg:pb-64">
             {/* Vertical Layout Lines - Starts exactly at the horizontal header line */}
             <div className="absolute top-[60px] md:top-[68px] bottom-0 left-0 right-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
                 <div className="border-x border-gray-200 h-full w-full mx-auto"></div>
@@ -54,8 +54,8 @@ const Hero: React.FC = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">Gestiona la ciberseguridad</span> de tu empresa.
                         </h1>
 
-                        <p className="mt-4 text-xl text-gray-500 mb-10 max-w-lg">
-                            Protege y asegura la continuidad de tu negocio con herramientas dotadas de IA para prevenir sustos.
+                        <p className="mt-4 text-xl text-gray-500 mb-10 max-w-xl">
+                            Elige las herramientas que necesites para proteger y asegurar la continuidad de tu negocio. Ciberbug lleva la IA a tus datos, donde quiera que se alojen. Detecta proactivamente las amenazas en toda la organización y ofrece <span className="text-brand-pink font-semibold">ciber resiliencia</span> con detección en tiempo real y respuesta autónoma a amenazas nuevas y conocidas.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
