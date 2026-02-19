@@ -103,11 +103,30 @@ const Navbar: React.FC = () => {
 
                 <div className="w-full flex items-center h-full">
                     {/* Logo - Left Aligned */}
-                    <div className="flex-shrink-0 flex items-center cursor-pointer mr-6 lg:mr-10">
-                        <span className="text-2xl font-black text-gray-900 tracking-tighter hover:opacity-75 transition-opacity">
+                    <motion.div
+                        className="flex-shrink-0 flex items-center cursor-pointer mr-6 lg:mr-10 group/logo"
+                        whileHover="hover"
+                    >
+                        <motion.img
+                            src="/ciberbug-pixel-monster.png"
+                            alt="Ciberbug Monster"
+                            className="w-8 h-8 mr-2 object-contain"
+                            variants={{
+                                hover: {
+                                    rotate: [0, -10, 10, -10, 10, 0],
+                                    scale: [1, 1.1, 1],
+                                    transition: {
+                                        duration: 0.5,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }
+                                }
+                            }}
+                        />
+                        <span className="text-2xl font-black text-gray-900 tracking-tighter transition-all group-hover/logo:text-[#635BFF]">
                             ciberbug
                         </span>
-                    </div>
+                    </motion.div>
 
                     {/* Desktop Menu - Left Aligned next to Logo */}
                     <div className="hidden md:flex space-x-1 lg:space-x-4">

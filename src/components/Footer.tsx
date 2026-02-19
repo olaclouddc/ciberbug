@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
     return (
@@ -6,10 +7,28 @@ const Footer: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="col-span-1">
-                        <span className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
-                            <div className="w-6 h-6 bg-brand-pink rounded-md"></div>
+                        <motion.span
+                            className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4 cursor-pointer group"
+                            whileHover="hover"
+                        >
+                            <motion.img
+                                src="/ciberbug-pixel-monster.png"
+                                alt="Ciberbug"
+                                className="w-6 h-6 object-contain"
+                                variants={{
+                                    hover: {
+                                        rotate: [0, -10, 10, -10, 10, 0],
+                                        scale: [1, 1.1, 1],
+                                        transition: {
+                                            duration: 0.5,
+                                            repeat: Infinity,
+                                            ease: "easeInOut"
+                                        }
+                                    }
+                                }}
+                            />
                             Ciberbug
-                        </span>
+                        </motion.span>
                         <p className="text-gray-500 text-sm">
                             Infraestructura de seguridad para internet. Ayudamos a empresas de todos los tamaños a proteger sus activos y prevenir vulnerabilidades.
                         </p>
