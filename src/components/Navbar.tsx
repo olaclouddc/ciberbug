@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
                     {/* Desktop Menu - Left Aligned next to Logo */}
                     <div className="hidden md:flex space-x-1 lg:space-x-4">
                         <NavItem
-                            title="Productos"
+                            title="Plataforma"
                             id="products"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('products')}
