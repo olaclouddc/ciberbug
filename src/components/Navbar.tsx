@@ -48,27 +48,34 @@ function ActivityIcon() { return <div className="w-5 h-5 rounded-full border-2 b
 const Navbar: React.FC = () => {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const [isHovered, setIsHovered] = useState(false);
+    const timeoutRef = React.useRef<any>(null);
 
     // Track the direction of the slide
     const menuOrder = ['products', 'solutions', 'developers', 'resources', 'pricing'];
     const [direction, setDirection] = useState<'left' | 'right'>('right');
 
     const handleMouseEnter = (menu: string) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
         if (activeMenu && activeMenu !== menu) {
             const prevIndex = menuOrder.indexOf(activeMenu);
             const nextIndex = menuOrder.indexOf(menu);
             setDirection(nextIndex > prevIndex ? 'right' : 'left');
         }
         setActiveMenu(menu);
+        setIsHovered(true);
     };
 
     const handleNavMouseEnter = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
         setIsHovered(true);
     };
 
     const handleMouseLeave = () => {
-        setActiveMenu(null);
-        setIsHovered(false);
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+            setActiveMenu(null);
+            setIsHovered(false);
+        }, 100);
     };
 
     return (
@@ -167,6 +174,8 @@ const Navbar: React.FC = () => {
                                 exit={{ opacity: 0, y: -10 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
                                 className="bg-white rounded-b-2xl shadow-[0_50px_100px_-20px_rgba(50,50,93,0.25),0_30px_60px_-30px_rgba(0,0,0,0.3)] overflow-hidden"
+                                onMouseEnter={handleNavMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                             >
                                 <div className="relative overflow-hidden p-8">
                                     <AnimatePresence initial={false} mode="popLayout">
@@ -187,9 +196,9 @@ const Navbar: React.FC = () => {
                                                                 {prod.title}
                                                             </div>
                                                             <p className="text-sm text-gray-500 mb-3">{prod.desc}</p>
-                                                            <ul className="space-y-1">
+                                                            <ul className="divide-y divide-gray-100 border-t border-gray-100 mt-3 pt-1">
                                                                 {prod.items.map((item, j) => (
-                                                                    <li key={j} className="text-sm text-gray-500 hover:text-gray-900 cursor-pointer">{item}</li>
+                                                                    <li key={j} className="text-sm text-gray-500 hover:text-gray-900 cursor-pointer py-2 block">{item}</li>
                                                                 ))}
                                                             </ul>
                                                         </div>
