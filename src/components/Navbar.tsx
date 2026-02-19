@@ -10,7 +10,7 @@ const products = [
         items: ["Analiza tu sitio web", "Desinfección Wordpress", "Desinfección malware"]
     },
     {
-        title: "GDPR Privacidad",
+        title: "GDPR",
         desc: "Protege los datos",
         icon: <Shield className="text-brand-pink" />,
         items: ["Cumplimiento legal", "Protección de datos"]
