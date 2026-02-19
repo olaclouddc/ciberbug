@@ -7,7 +7,7 @@ const products = [
         title: "Página web",
         desc: "Asegura tu negocio online",
         icon: <Globe className="text-blue-500" />,
-        items: ["Analiza tu sitio web", "Desinfección Wordpress", "Desinfección malware"]
+        items: ["Analiza tu sitio web", "Protección Wordpress", "Desinfección Wordpress", "Desinfección malware"]
     },
     {
         title: "GDPR",
