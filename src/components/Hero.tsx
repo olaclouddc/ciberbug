@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 const Hero: React.FC = () => {
     return (
         <div className="relative overflow-hidden pt-16 pb-32 lg:pt-24 lg:pb-40">
-            {/* Vertical Layout Lines - Starts here, not in Navbar */}
-            <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
+            {/* Vertical Layout Lines - Starts here, pushed down to avoid Navbar area */}
+            <div className="absolute top-16 lg:top-24 bottom-0 left-0 right-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
                 <div className="border-x border-gray-200 h-full w-full mx-auto"></div>
             </div>
             {/* Stripe-style slanted background image */}
