@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-[0.9]">
-                            Ciberseguridad para tu empresa. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">Asegura la continuidad de tu negocio.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">Gestiona la ciberseguridad</span> de tu empresa.
                         </h1>
 
                         <p className="mt-4 text-xl text-gray-500 mb-10 max-w-lg">
