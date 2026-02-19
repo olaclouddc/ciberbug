@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
             >
                 {/* Island Background */}
                 <div
-                    className={`absolute inset-0 bg-white/40 backdrop-blur-md rounded-t-lg rounded-b-none transition-all duration-200 -z-10 ${activeMenu || isHovered ? "opacity-100" : "opacity-0"}`}
+                    className={`absolute inset-0 bg-white/90 backdrop-blur-md rounded-t-lg rounded-b-none transition-all duration-200 -z-10 ${activeMenu || isHovered ? "opacity-100" : "opacity-0"}`}
                 ></div>
 
                 <div className="w-full flex items-center h-full">
