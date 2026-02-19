@@ -196,7 +196,7 @@ const Navbar: React.FC = () => {
                                                             <span className="font-bold text-lg tracking-tight">Cibercheck</span>
                                                         </div>
                                                         <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                                                            Analiza ahora tu sitio web para ver tu seguridad. Detecta vulnerabilidades y mejora tu protección.
+                                                            Analiza ahora tu sitio web para comprobar su seguridad. Detecta vulnerabilidades y mejora tu protección.
                                                         </p>
                                                         <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn">
                                                             Empezar análisis
