@@ -51,8 +51,7 @@ const Hero: React.FC = () => {
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-tight">
-                            Seguridad para <br className="hidden lg:block" />
-                            la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">siguiente generación</span> de constructores
+                            Protege tu empresa y la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">continuidad de tu negocio</span>
                         </h1>
 
                         <p className="mt-4 text-xl text-gray-500 mb-10 max-w-lg">
