@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                     <div className="lg:col-span-6 text-left">
                         <div className="inline-flex items-center px-3 py-1 rounded-full bg-brand-pink/10 text-brand-pink text-xs font-semibold tracking-wide uppercase mb-6">
                             <span className="w-2 h-2 bg-brand-pink rounded-full mr-2"></span>
-                            Nuevo: Enterprise Control 2.0
+                            desde 19,99€/mes
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-[0.9]">
