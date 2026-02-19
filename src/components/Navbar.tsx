@@ -277,34 +277,54 @@ const Navbar: React.FC = () => {
 
                                             {/* Servicios Content */}
                                             {activeMenu === 'services' && (
-                                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 w-full min-h-[350px]">
-                                                    {services.map((service, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className={`p-8 lg:p-10 transition-all duration-300 ${i === 2
-                                                                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                                                                : 'bg-white text-gray-900 border-r border-gray-100/50'
-                                                                }`}
-                                                        >
-                                                            <div className="flex items-center gap-3 mb-6">
-                                                                <div className={`${i === 2 ? 'text-blue-100' : 'text-[#635BFF]'}`}>
-                                                                    {service.icon}
-                                                                </div>
-                                                                <span className="font-bold text-lg tracking-tight">{service.title}</span>
+                                                <div className="grid grid-cols-1 lg:grid-cols-6 gap-0">
+                                                    {/* Featured Side Column (Column 1) */}
+                                                    <div className="lg:col-span-2 bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
+                                                        <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
+                                                            {services[0].icon}
+                                                            <span className="font-bold text-lg tracking-tight">{services[0].title}</span>
+                                                        </div>
+                                                        <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                                                            {services[0].desc}
+                                                        </p>
+                                                        <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn whitespace-nowrap">
+                                                            Ver detalles del servicio
+                                                            <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                                                        </button>
+                                                    </div>
+
+                                                    {/* Main Grid (Columns 2 and 3) */}
+                                                    <div className="lg:col-span-4 grid grid-cols-2 gap-0 overflow-hidden text-left">
+                                                        {/* Column 2 - Normal White */}
+                                                        <div className="p-8 lg:p-10 bg-white border-r border-gray-100">
+                                                            <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold">
+                                                                {services[1].icon}
+                                                                {services[1].title}
                                                             </div>
-                                                            <p className={`text-sm mb-8 leading-relaxed ${i === 2 ? 'text-blue-100/80' : 'text-gray-500'}`}>
-                                                                {service.desc}
-                                                            </p>
-                                                            <ul className="space-y-4">
-                                                                {service.items.map((item, j) => (
-                                                                    <li key={j} className="flex items-center text-[13px] group/item cursor-pointer">
-                                                                        <ChevronRight className={`w-3.5 h-3.5 mr-2 transition-transform group-hover/item:translate-x-1 ${i === 2 ? 'text-white/40' : 'text-gray-300'}`} />
-                                                                        <span className={`${i === 2 ? 'hover:text-white' : 'hover:text-[#635BFF]'} transition-colors`}>{item}</span>
-                                                                    </li>
+                                                            <p className="text-xs text-gray-500 mb-4 h-8">{services[1].desc}</p>
+                                                            <ul className="space-y-2 text-left">
+                                                                {services[1].items.map((item, j) => (
+                                                                    <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
                                                                 ))}
                                                             </ul>
                                                         </div>
-                                                    ))}
+
+                                                        {/* Column 3 - Deep Blue (Third position overall) */}
+                                                        <div className="p-8 lg:p-10 bg-[#635BFF] text-white">
+                                                            <div className="flex items-center gap-3 mb-3 font-semibold text-white">
+                                                                <div className="text-blue-100">
+                                                                    {services[2].icon}
+                                                                </div>
+                                                                {services[2].title}
+                                                            </div>
+                                                            <p className="text-xs text-blue-100/80 mb-4 h-8">{services[2].desc}</p>
+                                                            <ul className="space-y-2 text-left">
+                                                                {services[2].items.map((item, j) => (
+                                                                    <li key={j} className="text-[13px] text-blue-100 hover:text-white cursor-pointer block transition-colors">{item}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             )}
 
