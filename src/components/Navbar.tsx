@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase, Mail, Cloud } from 'lucide-react';
+import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud } from 'lucide-react';
 
 const products = [
     {
@@ -42,10 +42,25 @@ const solutions = [
     { title: "Creadores", icon: <PieChart /> },
 ];
 
-const developers = [
-    { title: "Documentación", icon: <Terminal /> },
-    { title: "Referencias API", icon: <FileText /> },
-    { title: "Estado del sistema", icon: <ActivityIcon /> },
+const services = [
+    {
+        title: "Ciberseguridad Pro",
+        desc: "Protección avanzada",
+        icon: <Shield className="text-brand-pink" />,
+        items: ["Auditoría completa", "Pentesting", "Respuesta a incidentes"]
+    },
+    {
+        title: "Mantenimiento",
+        desc: "Gestión proactiva",
+        icon: <ActivityIcon />,
+        items: ["Actualizaciones críticas", "Backup gestionado", "Monitorización 24/7"]
+    },
+    {
+        title: "Consultoría Estratégica",
+        desc: "Planificación y cumplimiento",
+        icon: <Briefcase className="text-brand-purple" />,
+        items: ["Cumplimiento legal", "Plan director", "Ciber-resiliencia"]
+    }
 ];
 
 // Helper icon
@@ -58,7 +73,7 @@ const Navbar: React.FC = () => {
     const timeoutRef = React.useRef<any>(null);
 
     // Track the direction of the slide
-    const menuOrder = ['products', 'solutions', 'developers', 'resources', 'pricing'];
+    const menuOrder = ['products', 'services', 'solutions', 'resources', 'pricing'];
     const [direction, setDirection] = useState<'left' | 'right'>('right');
 
     const handleMouseEnter = (menu: string) => {
@@ -121,17 +136,17 @@ const Navbar: React.FC = () => {
                             hasChevron={true}
                         />
                         <NavItem
+                            title="Servicios"
+                            id="services"
+                            activeInfo={activeMenu}
+                            onEnter={() => handleMouseEnter('services')}
+                            hasChevron={true}
+                        />
+                        <NavItem
                             title="Soluciones"
                             id="solutions"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('solutions')}
-                            hasChevron={true}
-                        />
-                        <NavItem
-                            title="Desarrolladores"
-                            id="developers"
-                            activeInfo={activeMenu}
-                            onEnter={() => handleMouseEnter('developers')}
                             hasChevron={true}
                         />
                         <NavItem
@@ -260,15 +275,34 @@ const Navbar: React.FC = () => {
                                                 </div>
                                             )}
 
-                                            {/* Developers Content */}
-                                            {activeMenu === 'developers' && (
-                                                <div className="p-8 lg:p-10 grid grid-cols-2 gap-0 max-w-md">
-                                                    {developers.map((dev, i) => (
-                                                        <div key={i} className={`flex items-start gap-4 group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-100' : ''}`}>
-                                                            <div className="text-gray-400 group-hover:text-[#635BFF] transition-colors">{dev.icon}</div>
-                                                            <div>
-                                                                <h4 className="font-semibold text-gray-900 text-sm group-hover:text-[#635BFF] transition-colors">{dev.title}</h4>
+                                            {/* Servicios Content */}
+                                            {activeMenu === 'services' && (
+                                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 w-full min-h-[350px]">
+                                                    {services.map((service, i) => (
+                                                        <div
+                                                            key={i}
+                                                            className={`p-8 lg:p-10 transition-all duration-300 ${i === 2
+                                                                ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                                                : 'bg-white text-gray-900 border-r border-gray-100/50'
+                                                                }`}
+                                                        >
+                                                            <div className="flex items-center gap-3 mb-6">
+                                                                <div className={`${i === 2 ? 'text-blue-100' : 'text-[#635BFF]'}`}>
+                                                                    {service.icon}
+                                                                </div>
+                                                                <span className="font-bold text-lg tracking-tight">{service.title}</span>
                                                             </div>
+                                                            <p className={`text-sm mb-8 leading-relaxed ${i === 2 ? 'text-blue-100/80' : 'text-gray-500'}`}>
+                                                                {service.desc}
+                                                            </p>
+                                                            <ul className="space-y-4">
+                                                                {service.items.map((item, j) => (
+                                                                    <li key={j} className="flex items-center text-[13px] group/item cursor-pointer">
+                                                                        <ChevronRight className={`w-3.5 h-3.5 mr-2 transition-transform group-hover/item:translate-x-1 ${i === 2 ? 'text-white/40' : 'text-gray-300'}`} />
+                                                                        <span className={`${i === 2 ? 'hover:text-white' : 'hover:text-[#635BFF]'} transition-colors`}>{item}</span>
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -334,7 +368,7 @@ const Navbar: React.FC = () => {
                                     <div className="flex flex-col space-y-4 px-2">
                                         <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Tarifas</a>
                                         <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Soluciones</a>
-                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Desarrolladores</a>
+                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Servicios</a>
                                         <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Recursos</a>
                                     </div>
                                 </div>
