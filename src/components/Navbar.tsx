@@ -208,7 +208,7 @@ const Navbar: React.FC = () => {
                                                         <p className="text-sm text-gray-600 leading-relaxed mb-6">
                                                             Analiza ahora tu sitio web para comprobar su seguridad.
                                                         </p>
-                                                        <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn">
+                                                        <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn whitespace-nowrap">
                                                             Empezar análisis
                                                             <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                                                         </button>
