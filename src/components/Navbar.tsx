@@ -29,7 +29,7 @@ const products = [
     },
     {
         title: "GDPR",
-        desc: "Protege los datos",
+        desc: "Privacidad asegurada",
         icon: <Shield className="text-brand-pink" />,
         items: ["Cumplimiento legal", "Protección de datos"]
     }
