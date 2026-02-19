@@ -231,7 +231,7 @@ const Navbar: React.FC = () => {
                                                     {/* Main Products Grid */}
                                                     <div className="lg:col-span-5 p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-5 gap-0">
                                                         {products.map((prod, i) => (
-                                                            <div key={i} className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-50' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-50' : ''}`}>
+                                                            <div key={i} className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-100' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-100' : ''}`}>
                                                                 <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
                                                                     {prod.icon}
                                                                     {prod.title}
