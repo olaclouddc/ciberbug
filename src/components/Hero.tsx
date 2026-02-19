@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
             {/* Stripe-style slanted background image */}
             <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none overflow-hidden">
                 <div
-                    className="absolute -top-[30%] -right-[15%] w-[110%] h-[150%]"
+                    className="absolute -top-[30%] -right-[15%] w-[150%] sm:w-[130%] lg:w-[110%] h-[150%]"
                     style={{
                         transform: 'skewY(-12deg)',
                         transformOrigin: 'top right',
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                             Nuevo: Enterprise Control 2.0
                         </div>
 
-                        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
                             Seguridad para <br className="hidden lg:block" />
                             la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">siguiente generación</span> de constructores
                         </h1>

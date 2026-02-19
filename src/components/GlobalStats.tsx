@@ -30,7 +30,7 @@ const GlobalStats: React.FC = () => {
 
                     {/* Right Content - Stats Cards */}
                     <div className="mt-12 lg:mt-0 grid gap-6">
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <motion.div
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -38,7 +38,7 @@ const GlobalStats: React.FC = () => {
                                 transition={{ delay: 0.1 }}
                                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                             >
-                                <h3 className="text-4xl font-bold mb-2">99.9%</h3>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-2">99.9%</h3>
                                 <p className="text-sm text-white/80">De amenazas detectadas automáticamente</p>
                             </motion.div>
 
@@ -49,7 +49,7 @@ const GlobalStats: React.FC = () => {
                                 transition={{ delay: 0.2 }}
                                 className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                             >
-                                <h3 className="text-4xl font-bold mb-2">&lt;10ms</h3>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-2">&lt;10ms</h3>
                                 <p className="text-sm text-white/80">Latencia añadida a las solicitudes</p>
                             </motion.div>
                         </div>
@@ -59,13 +59,13 @@ const GlobalStats: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="bg-white/20 backdrop-blur-md rounded-2xl p-8 border border-white/20 flex items-center gap-6"
+                            className="bg-white/20 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/20 flex flex-col sm:flex-row items-start sm:items-center gap-6"
                         >
-                            <div className="bg-white p-3 rounded-full text-brand-pink">
-                                <Rocket size={32} />
+                            <div className="bg-white p-3 rounded-full text-brand-pink flex-shrink-0">
+                                <Rocket size={24} className="md:w-8 md:h-8" />
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold mb-1">Implementación Rápida</h3>
+                                <h3 className="text-xl md:text-2xl font-bold mb-1">Implementación Rápida</h3>
                                 <p className="text-white/90 text-sm">Integración en 5 líneas de código. Compatible con Node.js, Python, Go, Ruby y más.</p>
                             </div>
                         </motion.div>

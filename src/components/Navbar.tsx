@@ -54,6 +54,7 @@ function ActivityIcon() { return <div className="w-5 h-5 rounded-full border-2 b
 const Navbar: React.FC = () => {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const timeoutRef = React.useRef<any>(null);
 
     // Track the direction of the slide
@@ -158,12 +159,15 @@ const Navbar: React.FC = () => {
                         </button>
                     </div>
 
-                    {/* Mobile Menu Icon (Placeholder) */}
+                    {/* Mobile Menu Icon */}
                     <div className="md:hidden ml-auto">
-                        <button className="text-gray-900 p-2">
-                            <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
-                            <div className="w-6 h-0.5 bg-gray-900 mb-1.5"></div>
-                            <div className="w-6 h-0.5 bg-gray-900"></div>
+                        <button
+                            className="text-gray-900 p-2 relative z-50 pointer-events-auto"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
+                            <div className={`w-6 h-0.5 bg-gray-900 transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : 'mb-1.5'}`}></div>
+                            <div className={`w-6 h-0.5 bg-gray-900 transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'mb-1.5'}`}></div>
+                            <div className={`w-6 h-0.5 bg-gray-900 transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
                         </button>
                     </div>
                 </div>
@@ -289,6 +293,63 @@ const Navbar: React.FC = () => {
                     </AnimatePresence>
                 </div>
             </div>
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-white z-40 md:hidden pointer-events-auto"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, x: '100%' }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed inset-0 z-50 md:hidden pt-24 px-6 overflow-y-auto pointer-events-auto"
+                        >
+                            <div className="flex flex-col space-y-8">
+                                <div>
+                                    <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Productos</h3>
+                                    <div className="grid grid-cols-1 gap-2">
+                                        {products.map((prod, i) => (
+                                            <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
+                                                <div className="p-2 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
+                                                    {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                                </div>
+                                                <div>
+                                                    <div className="font-semibold text-gray-900 text-sm">{prod.title}</div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Empresa</h3>
+                                    <div className="flex flex-col space-y-4 px-2">
+                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Tarifas</a>
+                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Soluciones</a>
+                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Desarrolladores</a>
+                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Recursos</a>
+                                    </div>
+                                </div>
+
+                                <div className="pt-8 border-t border-gray-100 flex flex-col space-y-4">
+                                    <button className="w-full bg-gray-100 text-gray-900 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all">
+                                        Inicia sesión
+                                    </button>
+                                    <button className="w-full bg-brand-pink text-white py-4 rounded-xl font-bold hover:bg-pink-700 transition-all shadow-lg shadow-brand-pink/20">
+                                        Contacta con ventas
+                                    </button>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

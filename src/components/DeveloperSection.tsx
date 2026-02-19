@@ -47,8 +47,8 @@ const DeveloperSection: React.FC = () => {
                             <span className="mr-2">⚡️</span> DISEÑO API FIRST
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                            API potentes para flujos de <br /> seguridad personalizados.
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                            API potentes para flujos de <br className="hidden sm:block" /> seguridad personalizados.
                         </h2>
 
                         <p className="text-lg text-gray-400 mb-10">
@@ -98,8 +98,8 @@ const DeveloperSection: React.FC = () => {
                                 </button>
                             </div>
 
-                            <div className="p-6 overflow-x-auto">
-                                <pre className="text-blue-300">
+                            <div className="p-4 md:p-6 overflow-x-auto">
+                                <pre className="text-blue-300 text-xs md:text-sm">
                                     <code>{`// Instalar Ciberbug SDK
 `}<span className="text-white">$ npm install @ciberbug/sdk</span>
 

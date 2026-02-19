@@ -22,7 +22,7 @@ const NewsSection: React.FC = () => {
                 </div>
 
                 <div className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all">
-                    <div className="aspect-w-16 aspect-h-9 md:aspect-h-6 lg:aspect-h-5 relative h-96">
+                    <div className="aspect-w-16 aspect-h-9 md:aspect-h-6 lg:aspect-h-5 relative h-[500px] md:h-96">
                         <img
                             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
                             alt="Skyscrapers"
@@ -36,11 +36,11 @@ const NewsSection: React.FC = () => {
                             </span>
                         </div>
 
-                        <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
-                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 max-w-2xl">
+                        <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+                            <h3 className="text-xl md:text-3xl font-bold text-white mb-3 max-w-2xl">
                                 100k+ usuarios tienen su mejor día en Ciberbug.
                             </h3>
-                            <p className="text-gray-300 mb-6 max-w-3xl line-clamp-2 md:line-clamp-none">
+                            <p className="text-sm md:text-base text-gray-300 mb-6 max-w-3xl line-clamp-3 md:line-clamp-none">
                                 Desde el Black Friday hasta el Cyber Monday 2024, Ciberbug protegió más de 208 Millones de transacciones para empresas mientras manteníamos un 99.999% de uptime.
                             </p>
                             <div className="inline-flex items-center text-brand-pink font-semibold group-hover:underline">
