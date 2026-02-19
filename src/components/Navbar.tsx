@@ -220,19 +220,17 @@ const Navbar: React.FC = () => {
                                                 <div className="grid grid-cols-1 lg:grid-cols-6 gap-0">
                                                     {/* Featured Side Column */}
                                                     <div className="bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
-                                                        <div className="px-6">
-                                                            <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
-                                                                <Shield className="w-6 h-6" />
-                                                                <span className="font-bold text-lg tracking-tight">Cibercheck</span>
-                                                            </div>
-                                                            <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                                                                Analiza ahora tu sitio web para comprobar su seguridad.
-                                                            </p>
-                                                            <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn whitespace-nowrap">
-                                                                Empezar análisis
-                                                                <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                                                            </button>
+                                                        <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
+                                                            <Shield className="w-6 h-6" />
+                                                            <span className="font-bold text-lg tracking-tight">Cibercheck</span>
                                                         </div>
+                                                        <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                                                            Analiza ahora tu sitio web para comprobar su seguridad.
+                                                        </p>
+                                                        <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn whitespace-nowrap">
+                                                            Empezar análisis
+                                                            <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                                                        </button>
                                                     </div>
 
                                                     {/* Main Products Grid */}
