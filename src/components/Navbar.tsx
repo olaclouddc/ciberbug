@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud } from 'lucide-react';
+import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud, Terminal } from 'lucide-react';
 
 const products = [
     {
@@ -44,27 +44,24 @@ const solutions = [
 
 const services = [
     {
-        title: "Ciberseguridad Pro",
-        desc: "Protección avanzada",
-        icon: <Shield className="text-brand-pink" />,
-        items: ["Auditoría completa", "Pentesting", "Respuesta a incidentes"]
+        title: "SysAdmin 4You",
+        desc: "Tu departamento de sistemas externalizado.",
+        icon: <Terminal className="text-[#635BFF]" />,
+        items: ["Mantenimiento preventivo", "Soporte técnico 24/7", "Gestión de servidores"]
     },
     {
-        title: "Mantenimiento",
-        desc: "Gestión proactiva",
-        icon: <ActivityIcon />,
-        items: ["Actualizaciones críticas", "Backup gestionado", "Monitorización 24/7"]
+        title: "Servicios gestionados",
+        desc: "Administración proactiva de tu infraestructura.",
+        icon: <Cloud className="text-sky-500" />,
+        items: ["Backup gestionado", "Monitorización avanzada", "Seguridad perimetral"]
     },
     {
-        title: "Consultoría Estratégica",
-        desc: "Planificación y cumplimiento",
-        icon: <Briefcase className="text-brand-purple" />,
-        items: ["Cumplimiento legal", "Plan director", "Ciber-resiliencia"]
+        title: "Servicios Profesionales",
+        desc: "Consultoría y despliegue de soluciones a medida.",
+        icon: <Briefcase />,
+        items: ["Auditoría de sistemas", "Migraciones cloud", "Ciber-resiliencia"]
     }
 ];
-
-// Helper icon
-function ActivityIcon() { return <div className="w-5 h-5 rounded-full border-2 border-current opacity-60" />; }
 
 const Navbar: React.FC = () => {
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -277,9 +274,9 @@ const Navbar: React.FC = () => {
 
                                             {/* Servicios Content */}
                                             {activeMenu === 'services' && (
-                                                <div className="grid grid-cols-1 lg:grid-cols-6 gap-0">
-                                                    {/* Featured Side Column (Column 1) */}
-                                                    <div className="lg:col-span-2 bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
+                                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                                                    {/* Column 1 - Featured Side Column style */}
+                                                    <div className="bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
                                                         <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
                                                             {services[0].icon}
                                                             <span className="font-bold text-lg tracking-tight">{services[0].title}</span>
@@ -288,42 +285,39 @@ const Navbar: React.FC = () => {
                                                             {services[0].desc}
                                                         </p>
                                                         <button className="flex items-center text-[#635BFF] text-sm font-semibold hover:opacity-80 transition-opacity group/btn whitespace-nowrap">
-                                                            Ver detalles del servicio
+                                                            Más información
                                                             <ChevronRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
                                                         </button>
                                                     </div>
 
-                                                    {/* Main Grid (Columns 2 and 3) */}
-                                                    <div className="lg:col-span-4 grid grid-cols-2 gap-0 overflow-hidden text-left">
-                                                        {/* Column 2 - Normal White */}
-                                                        <div className="p-8 lg:p-10 bg-white border-r border-gray-100">
-                                                            <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold">
-                                                                {services[1].icon}
-                                                                {services[1].title}
-                                                            </div>
-                                                            <p className="text-xs text-gray-500 mb-4 h-8">{services[1].desc}</p>
-                                                            <ul className="space-y-2 text-left">
-                                                                {services[1].items.map((item, j) => (
-                                                                    <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
-                                                                ))}
-                                                            </ul>
+                                                    {/* Column 2 - Main White Column style */}
+                                                    <div className="p-8 lg:p-10 bg-white border-r border-gray-100 text-left">
+                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold">
+                                                            {services[1].icon}
+                                                            {services[1].title}
                                                         </div>
+                                                        <p className="text-xs text-gray-500 mb-4 h-8">{services[1].desc}</p>
+                                                        <ul className="space-y-2 text-left">
+                                                            {services[1].items.map((item, j) => (
+                                                                <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
 
-                                                        {/* Column 3 - Deep Blue (Third position overall) */}
-                                                        <div className="p-8 lg:p-10 bg-[#635BFF] text-white">
-                                                            <div className="flex items-center gap-3 mb-3 font-semibold text-white">
-                                                                <div className="text-blue-100">
-                                                                    {services[2].icon}
-                                                                </div>
-                                                                {services[2].title}
+                                                    {/* Column 3 - Deep Blue Column style */}
+                                                    <div className="p-8 lg:p-10 bg-[#635BFF] text-white text-left">
+                                                        <div className="flex items-center gap-3 mb-3 font-semibold text-white">
+                                                            <div className="text-blue-100">
+                                                                {services[2].icon}
                                                             </div>
-                                                            <p className="text-xs text-blue-100/80 mb-4 h-8">{services[2].desc}</p>
-                                                            <ul className="space-y-2 text-left">
-                                                                {services[2].items.map((item, j) => (
-                                                                    <li key={j} className="text-[13px] text-blue-100 hover:text-white cursor-pointer block transition-colors">{item}</li>
-                                                                ))}
-                                                            </ul>
+                                                            {services[2].title}
                                                         </div>
+                                                        <p className="text-xs text-blue-100/80 mb-4 h-8">{services[2].desc}</p>
+                                                        <ul className="space-y-2 text-left">
+                                                            {services[2].items.map((item, j) => (
+                                                                <li key={j} className="text-[13px] text-blue-100 hover:text-white cursor-pointer block transition-colors">{item}</li>
+                                                            ))}
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             )}
