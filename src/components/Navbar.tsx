@@ -7,7 +7,7 @@ const products = [
         title: "Página web",
         desc: "Asegura tu negocio online",
         icon: <Globe className="text-blue-500" />,
-        items: ["Onboarding", "Payouts"]
+        items: ["Analiza tu sitio web", "Desinfección Wordpress", "Desinfección malware"]
     },
     {
         title: "GDPR Privacidad",
@@ -19,7 +19,7 @@ const products = [
         title: "Email",
         desc: "Seguridad y control de correo",
         icon: <Mail className="text-brand-purple" />,
-        items: ["Protección anti-phishing", "Cifrado de mensajes"]
+        items: ["Relay SMTP", "Antispam", "Protección anti-phishing"]
     },
     {
         title: "Identidad",
