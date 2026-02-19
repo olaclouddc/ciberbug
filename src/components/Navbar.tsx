@@ -7,13 +7,13 @@ const products = [
         title: "Página web",
         desc: "Asegura tu negocio online",
         icon: <Globe className="text-blue-500" />,
-        items: ["Analiza tu sitio web", "Protección Wordpress", "Desinfección Wordpress", "Desinfección malware"]
+        items: ["Analiza tu sitio web", "Protección Wordpress", "Certificados SSL", "Desinfección malware"]
     },
     {
         title: "Cloud",
         desc: "Seguridad en la nube",
         icon: <Cloud className="text-sky-500" />,
-        items: ["Certificado SSL", "Monitorización servidores", "Administración cloud"]
+        items: ["Backup Cloud", "Monitorización servidores", "Administración cloud"]
     },
     {
         title: "Email",
