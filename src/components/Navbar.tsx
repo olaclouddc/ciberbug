@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
                         <motion.img
                             src="/ciberbug-pixel-monster.png"
                             alt="Ciberbug Monster"
-                            className="w-8 h-8 mr-2 object-contain"
+                            className="w-6 h-6 mr-2 object-contain"
                             variants={{
                                 hover: {
                                     rotate: [0, -10, 10, -10, 10, 0],

@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                             <motion.img
                                 src="/ciberbug-pixel-monster.png"
                                 alt="Ciberbug"
-                                className="w-6 h-6 object-contain"
+                                className="w-5 h-5 object-contain"
                                 variants={{
                                     hover: {
                                         rotate: [0, -10, 10, -10, 10, 0],
