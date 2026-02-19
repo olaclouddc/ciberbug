@@ -13,11 +13,11 @@ const products = [
         title: "Cloud",
         desc: "Seguridad en la nube",
         icon: <Cloud className="text-sky-500" />,
-        items: ["Certificado SSL", "Monitorización servidores", "Administración servidores"]
+        items: ["Certificado SSL", "Monitorización servidores", "Administración cloud"]
     },
     {
         title: "Email",
-        desc: "Seguridad y control de correo",
+        desc: "Seguridad y control",
         icon: <Mail className="text-brand-purple" />,
         items: ["Relay SMTP", "Antispam", "Protección anti-phishing"]
     },
