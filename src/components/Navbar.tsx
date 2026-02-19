@@ -166,13 +166,13 @@ const Navbar: React.FC = () => {
                     </div>
 
                     {/* Actions - Pushed to the right */}
-                    <div className="hidden md:flex items-center space-x-4 ml-auto">
-                        <button className="text-gray-900 text-sm font-medium hover:text-gray-600 transition-colors px-3 py-2">
-                            Inicia sesión
+                    <div className="hidden md:flex items-center space-x-3 ml-auto">
+                        <button className="bg-white text-black text-sm font-bold px-5 py-2 rounded-[4px] mix-blend-screen transition-all hover:mix-blend-normal hover:bg-white hover:text-[#635BFF] hover:ring-1 hover:ring-[#635BFF] hover:shadow-sm">
+                            Iniciar sesión
                         </button>
-                        <button className="bg-[#635BFF] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#5851df] transition-colors shadow-sm flex items-center group">
+                        <button className="bg-[#635BFF] text-white px-5 py-2 rounded-[4px] text-sm font-bold hover:bg-[#5851df] transition-colors shadow-sm flex items-center group">
                             Contacta con ventas
-                            <ChevronRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </button>
                     </div>
 
@@ -395,9 +395,9 @@ const Navbar: React.FC = () => {
 
                                 <div className="pt-8 border-t border-gray-100 flex flex-col space-y-4">
                                     <button className="w-full bg-gray-100 text-gray-900 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all">
-                                        Inicia sesión
+                                        Iniciar sesión
                                     </button>
-                                    <button className="w-full bg-brand-pink text-white py-4 rounded-xl font-bold hover:bg-pink-700 transition-all shadow-lg shadow-brand-pink/20">
+                                    <button className="w-full bg-[#635BFF] text-white py-4 rounded-xl font-bold hover:bg-[#5851df] transition-all shadow-lg shadow-brand-pink/20">
                                         Contacta con ventas
                                     </button>
                                 </div>
