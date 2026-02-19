@@ -292,7 +292,7 @@ const Navbar: React.FC = () => {
 
                                                     {/* Column 2 - Main White Column style */}
                                                     <div className="p-8 lg:p-10 bg-white border-r border-gray-100 text-left">
-                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold">
+                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors">
                                                             {services[1].icon}
                                                             {services[1].title}
                                                         </div>
@@ -304,18 +304,16 @@ const Navbar: React.FC = () => {
                                                         </ul>
                                                     </div>
 
-                                                    {/* Column 3 - Deep Blue Column style */}
-                                                    <div className="p-8 lg:p-10 bg-[#635BFF] text-white text-left">
-                                                        <div className="flex items-center gap-3 mb-3 font-semibold text-white">
-                                                            <div className="text-blue-100">
-                                                                {services[2].icon}
-                                                            </div>
+                                                    {/* Column 3 - Main White Column style */}
+                                                    <div className="p-8 lg:p-10 bg-white text-left">
+                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors">
+                                                            {services[2].icon}
                                                             {services[2].title}
                                                         </div>
-                                                        <p className="text-xs text-blue-100/80 mb-4 h-8">{services[2].desc}</p>
+                                                        <p className="text-xs text-gray-500 mb-4 h-8">{services[2].desc}</p>
                                                         <ul className="space-y-2 text-left">
                                                             {services[2].items.map((item, j) => (
-                                                                <li key={j} className="text-[13px] text-blue-100 hover:text-white cursor-pointer block transition-colors">{item}</li>
+                                                                <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
                                                             ))}
                                                         </ul>
                                                     </div>
