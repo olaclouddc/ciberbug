@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase, Mail } from 'lucide-react';
+import { ChevronDown, ChevronRight, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase, Mail, Cloud } from 'lucide-react';
 
 const products = [
     {
@@ -22,10 +22,16 @@ const products = [
         items: ["Protección anti-phishing", "Cifrado de mensajes"]
     },
     {
-        title: "Fraud",
-        desc: "Detección de fraude",
-        icon: <Shield className="text-green-500" />,
-        items: ["Radar", "Identity"]
+        title: "Identidad",
+        desc: "Gestión de acceso seguro",
+        icon: <Users className="text-green-500" />,
+        items: ["Phishing", "MFA"]
+    },
+    {
+        title: "Cloud",
+        desc: "Seguridad en la nube",
+        icon: <Cloud className="text-sky-500" />,
+        items: ["Cloud Architecture", "AWS/Azure/GCP Security"]
     }
 ];
 
@@ -188,7 +194,7 @@ const Navbar: React.FC = () => {
                                         >
                                             {/* Products Content */}
                                             {activeMenu === 'products' && (
-                                                <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+                                                <div className="grid grid-cols-1 lg:grid-cols-6 gap-0">
                                                     {/* Featured Side Column */}
                                                     <div className="bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
                                                         <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
@@ -205,9 +211,9 @@ const Navbar: React.FC = () => {
                                                     </div>
 
                                                     {/* Main Products Grid */}
-                                                    <div className="lg:col-span-4 p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-4 gap-0">
+                                                    <div className="lg:col-span-5 p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-5 gap-0">
                                                         {products.map((prod, i) => (
-                                                            <div key={i} className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-50' : ''} ${i === 1 ? 'lg:border-r border-gray-50' : ''} ${i === 2 ? 'lg:border-r border-gray-50' : ''}`}>
+                                                            <div key={i} className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-50' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-50' : ''}`}>
                                                                 <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
                                                                     {prod.icon}
                                                                     {prod.title}
