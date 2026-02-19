@@ -4,10 +4,10 @@ import { ChevronDown, ChevronRight, CreditCard, Box, Globe, Shield, Terminal, Us
 
 const products = [
     {
-        title: "Pagos",
-        desc: "Acepta pagos online",
-        icon: <CreditCard className="text-brand-purple" />,
-        items: ["Checkout", "Elements", "Payment Links"]
+        title: "Página web",
+        desc: "Asegura tu negocio online",
+        icon: <Globe className="text-blue-500" />,
+        items: ["Onboarding", "Payouts"]
     },
     {
         title: "Billing",
@@ -16,10 +16,10 @@ const products = [
         items: ["Recurring Revenue", "Invoicing"]
     },
     {
-        title: "Connect",
-        desc: "Pagos para plataformas",
-        icon: <Globe className="text-blue-500" />,
-        items: ["Onboarding", "Payouts"]
+        title: "Pagos",
+        desc: "Acepta pagos online",
+        icon: <CreditCard className="text-brand-purple" />,
+        items: ["Checkout", "Elements", "Payment Links"]
     },
     {
         title: "Fraud",
