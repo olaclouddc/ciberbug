@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                         </h1>
 
                         <p className="mt-4 text-xl text-gray-500 mb-10 max-w-lg">
-                            Configura la seguridad que deseas y nuestros sistemas inteligentes y proactivos protegerán tus datos y sistemas de ataques e infecciones.
+                            Protege y asegura la continuidad de tu negocio con herramientas dotadas de IA para prevenir sustos.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
