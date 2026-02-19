@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
                             Nuevo: Enterprise Control 2.0
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-tight">
                             Seguridad para <br className="hidden lg:block" />
                             la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">siguiente generación</span> de constructores
                         </h1>
