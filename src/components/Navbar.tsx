@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
             {/* Stripe-like bottom border line - visible full width */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200 pointer-events-auto"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
+            <div className="max-w-7xl mx-auto px-2 lg:px-0 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
                 onMouseEnter={handleNavMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
@@ -104,25 +104,8 @@ const Navbar: React.FC = () => {
                 <div className="w-full flex items-center h-full">
                     {/* Logo - Left Aligned */}
                     <motion.div
-                        className="flex-shrink-0 flex items-center cursor-pointer mr-6 lg:mr-10 group/logo"
-                        whileHover="hover"
+                        className="flex-shrink-0 flex items-center cursor-pointer mr-6 md:mr-8 group/logo"
                     >
-                        <motion.img
-                            src="/ciberbug-pixel-monster.png"
-                            alt="Ciberbug Monster"
-                            className="w-6 h-6 mr-3 object-contain"
-                            variants={{
-                                hover: {
-                                    rotate: [0, -10, 10, -10, 10, 0],
-                                    scale: [1, 1.1, 1],
-                                    transition: {
-                                        duration: 0.5,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }
-                                }
-                            }}
-                        />
                         <span className="text-2xl font-black text-gray-900 tracking-tighter transition-all group-hover/logo:text-[#635BFF]">
                             ciberbug
                         </span>
@@ -193,7 +176,7 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Sliding Dropdown Container */}
-            <div className="absolute top-full left-0 right-0 flex justify-center pointer-events-none px-4 sm:px-6 lg:px-8">
+            <div className="absolute top-full left-0 right-0 flex justify-center pointer-events-none px-2 lg:px-0">
                 <div className="w-full max-w-7xl pointer-events-auto">
                     <AnimatePresence>
                         {activeMenu && activeMenu !== 'pricing' && (
