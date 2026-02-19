@@ -34,7 +34,11 @@ const features = [
 
 const Features: React.FC = () => {
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-gray-50 relative">
+            {/* Vertical Layout Lines */}
+            <div className="absolute inset-0 max-w-7xl mx-auto pointer-events-none z-0 px-4 sm:px-6 lg:px-8">
+                <div className="border-x border-gray-200 h-full w-full mx-auto"></div>
+            </div>
             <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24">
 
                 <div className="mb-16">
