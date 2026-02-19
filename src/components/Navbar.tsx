@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, CreditCard, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase } from 'lucide-react';
+import { ChevronDown, ChevronRight, Box, Globe, Shield, Terminal, Users, FileText, PieChart, Briefcase, Mail } from 'lucide-react';
 
 const products = [
     {
@@ -16,10 +16,10 @@ const products = [
         items: ["Cumplimiento legal", "Protección de datos"]
     },
     {
-        title: "Pagos",
-        desc: "Acepta pagos online",
-        icon: <CreditCard className="text-brand-purple" />,
-        items: ["Checkout", "Elements", "Payment Links"]
+        title: "Email",
+        desc: "Seguridad y control de correo",
+        icon: <Mail className="text-brand-purple" />,
+        items: ["Protección anti-phishing", "Cifrado de mensajes"]
     },
     {
         title: "Fraud",
