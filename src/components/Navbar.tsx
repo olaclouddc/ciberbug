@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
             {/* Stripe-like bottom border line - visible full width */}
             <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200 pointer-events-auto"></div>
 
-            <div className="max-w-7xl mx-auto px-2 lg:px-0 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
+            <div className="max-w-7xl mx-auto px-10 sm:px-16 lg:px-24 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
                 onMouseEnter={handleNavMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Sliding Dropdown Container */}
-            <div className="absolute top-full left-0 right-0 flex justify-center pointer-events-none px-2 lg:px-0">
+            <div className="absolute top-full left-0 right-0 flex justify-center pointer-events-none px-10 sm:px-16 lg:px-24">
                 <div className="w-full max-w-7xl pointer-events-auto">
                     <AnimatePresence>
                         {activeMenu && activeMenu !== 'pricing' && (
