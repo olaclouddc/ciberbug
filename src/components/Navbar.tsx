@@ -10,10 +10,10 @@ const products = [
         items: ["Onboarding", "Payouts"]
     },
     {
-        title: "Billing",
-        desc: "Gestiona suscripciones",
-        icon: <FileText className="text-brand-pink" />,
-        items: ["Recurring Revenue", "Invoicing"]
+        title: "GDPR Privacidad",
+        desc: "Protege los datos de tus clientes",
+        icon: <Shield className="text-brand-pink" />,
+        items: ["Cumplimiento legal", "Protección de datos"]
     },
     {
         title: "Pagos",
