@@ -89,8 +89,8 @@ const Navbar: React.FC = () => {
         <nav
             className="absolute top-0 left-0 right-0 z-50 transition-all duration-300 pointer-events-none pt-3"
         >
-            {/* Stripe-like bottom border line - kept full width but faded */}
-            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200/0 pointer-events-auto"></div>
+            {/* Stripe-like bottom border line - visible full width */}
+            <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gray-200 pointer-events-auto"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 h-12 md:h-14 flex items-center pointer-events-auto"
                 onMouseEnter={handleNavMouseEnter}
