@@ -50,12 +50,12 @@ const Hero: React.FC = () => {
                             Nuevo: Enterprise Control 2.0
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-tight">
-                            Protege tu empresa y la <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">continuidad de tu negocio</span>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-oswald font-bold uppercase tracking-tight text-gray-900 mb-6 leading-[0.9]">
+                            Ciberseguridad para tu empresa. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-pink to-brand-purple">Asegura la continuidad de tu negocio.</span>
                         </h1>
 
                         <p className="mt-4 text-xl text-gray-500 mb-10 max-w-lg">
-                            Millones de empresas de todos los tamaños, desde startups hasta la lista Fortune 500, utilizan el software y las API de Ciberbug para proteger sus activos digitales.
+                            Configura la seguridad que deseas y nuestros sistemas inteligentes y proactivos protegerán tus datos y sistemas de ataques e infecciones.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
