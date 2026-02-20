@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Shield, Activity, Lock } from 'lucide-react';
+import { ArrowRight, Shield, Activity, Lock, Bell } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
@@ -61,27 +61,32 @@ const Hero: React.FC = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-pink hover:bg-pink-700 md:text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                                Empezar a usarlo
-                                <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+                            <button className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-pink hover:bg-pink-700 md:text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 group">
+                                Pruébalo gratis
+                                <motion.div
+                                    animate={{ x: [0, 5, 0] }}
+                                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                                >
+                                    <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
+                                </motion.div>
                             </button>
                             <button className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-gray-700 bg-gray-100 hover:bg-gray-200 md:text-lg transition-all">
-                                Solicitar acceso
+                                Solicitar demo
                             </button>
                         </div>
 
                         <div className="mt-12 flex items-center gap-6 text-sm text-gray-500">
                             <div className="flex items-center gap-2">
                                 <Shield size={16} className="text-gray-400" />
-                                <span>Seguro</span>
+                                <span>Seguridad simplificada</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Activity size={16} className="text-gray-400" />
-                                <span>Escalable</span>
+                                <span>Control total</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Lock size={16} className="text-gray-400" />
-                                <span>Privado</span>
+                                <Bell size={16} className="text-gray-400" />
+                                <span>Notificaciones en tiempo real</span>
                             </div>
                         </div>
                     </div>

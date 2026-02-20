@@ -44,7 +44,7 @@ const Features: React.FC = () => {
                 <div className="mb-16">
                     <h2 className="text-brand-pink font-semibold tracking-wide uppercase text-sm mb-3">Plataforma Unificada</h2>
                     <h3 className="text-3xl md:text-4xl font-bold text-gray-900 max-w-2xl leading-tight">
-                        Un conjunto totalmente integrado de productos de seguridad.
+                        Un conjunto totalmente integrado de herramientas de seguridad dotadas de IA proactiva y resolutiva.
                     </h3>
                 </div>
 
