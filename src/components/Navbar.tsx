@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud, Terminal } from 'lucide-react';
+import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud, Terminal, HeartPulse, GraduationCap, Landmark, Trophy, ShoppingBag, Factory } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const products = [
@@ -46,6 +46,12 @@ const solutions = [
     { title: "SaaS", icon: <Briefcase className="text-blue-500" /> },
     { title: "Marketplaces", icon: <Users className="text-indigo-500" /> },
     { title: "Creadores", icon: <PieChart className="text-orange-500" /> },
+    { title: "Salud", icon: <HeartPulse className="text-red-500" /> },
+    { title: "Educación", icon: <GraduationCap className="text-blue-400" /> },
+    { title: "Administraciones públicas", icon: <Landmark className="text-amber-600" /> },
+    { title: "Equipos deportivos", icon: <Trophy className="text-yellow-500" /> },
+    { title: "Retail", icon: <ShoppingBag className="text-emerald-500" /> },
+    { title: "Industria", icon: <Factory className="text-slate-600" /> },
 ];
 
 const services = [
@@ -158,7 +164,7 @@ const Navbar: React.FC = () => {
                             hasChevron={true}
                         />
                         <NavItem
-                            title="Tarifas"
+                            title="Precios"
                             id="pricing"
                             activeInfo={activeMenu}
                             onEnter={() => handleMouseEnter('pricing')}
@@ -268,6 +274,7 @@ const Navbar: React.FC = () => {
                                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por etapa</h4>
                                                         <ul className="space-y-3">
                                                             <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer transition-colors">Grandes empresas</li>
+                                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer transition-colors">Medianas empresas</li>
                                                             <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer transition-colors">Startups</li>
                                                         </ul>
                                                     </div>
@@ -396,7 +403,7 @@ const Navbar: React.FC = () => {
                                     <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Empresa</h3>
                                     <div className="flex flex-col space-y-4 px-2">
                                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Home Pagina</Link>
-                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Tarifas</Link>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Precios</Link>
                                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Soluciones</Link>
                                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Servicios</Link>
                                         <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Recursos</Link>
