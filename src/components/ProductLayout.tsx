@@ -47,7 +47,7 @@ interface ProductLayoutProps {
     badge: string;
     title: React.ReactNode;
     subtitle: string;
-    heroImage: string;
+    heroImage?: string;
     primaryBtnText: string;
     secondaryBtnText: string;
     featuresTitle: string;
@@ -58,6 +58,7 @@ interface ProductLayoutProps {
         title: string;
         stats: { label: string; value: string }[];
     };
+    rightContent?: React.ReactNode;
 }
 
 const ProductLayout: React.FC<ProductLayoutProps> = ({
@@ -70,7 +71,8 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
     featuresTitle,
     featuresSubtitle,
     features,
-    bottomBanner
+    bottomBanner,
+    rightContent
 }) => {
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -132,26 +134,32 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative"
                         >
-                            {/* Main Image Container */}
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                                <motion.img
-                                    src={heroImage}
-                                    alt="Hero Illustration"
-                                    className="w-full h-auto"
-                                    animate={{
-                                        y: [0, -10, 0],
-                                    }}
-                                    transition={{
-                                        duration: 6,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                />
-                            </div>
+                            {rightContent ? (
+                                rightContent
+                            ) : (
+                                <>
+                                    {/* Main Image Container */}
+                                    <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                                        <motion.img
+                                            src={heroImage}
+                                            alt="Hero Illustration"
+                                            className="w-full h-auto"
+                                            animate={{
+                                                y: [0, -10, 0],
+                                            }}
+                                            transition={{
+                                                duration: 6,
+                                                repeat: Infinity,
+                                                ease: "easeInOut"
+                                            }}
+                                        />
+                                    </div>
 
-                            {/* Floating elements to add life */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-pink/5 rounded-full blur-3xl -z-10"></div>
-                            <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-brand-purple/5 rounded-full blur-3xl -z-10"></div>
+                                    {/* Floating elements to add life */}
+                                    <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-pink/5 rounded-full blur-3xl -z-10"></div>
+                                    <div className="absolute -bottom-10 -left-10 w-60 h-60 bg-brand-purple/5 rounded-full blur-3xl -z-10"></div>
+                                </>
+                            )}
                         </motion.div>
                     </div>
                 </div>
