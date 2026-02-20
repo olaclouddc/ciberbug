@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Shield, Activity, Lock, Bell } from 'lucide-react';
+import { ArrowRight, Shield, Activity, Lock, Bell, CheckCircle, Database } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
@@ -112,8 +112,17 @@ const Hero: React.FC = () => {
                             {/* Main Graph/Chart Area */}
                             <div className="flex justify-center mb-8 relative">
                                 <div className="w-40 h-40 rounded-full border-8 border-gray-50 flex items-center justify-center relative">
-                                    <div className="absolute inset-0 rounded-full border-8 border-brand-pink/20 border-t-brand-pink transform -rotate-45"></div>
-                                    <Shield className="h-10 w-10 text-brand-pink" />
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                                        className="absolute inset-0 rounded-full border-8 border-transparent border-t-brand-pink border-r-brand-pink/30"
+                                    ></motion.div>
+                                    <motion.div
+                                        animate={{ scale: [1, 1.1, 1] }}
+                                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                                    >
+                                        <Shield className="h-10 w-10 text-brand-pink" />
+                                    </motion.div>
                                 </div>
 
                                 {/* Floating badge 1 */}
@@ -145,6 +154,25 @@ const Hero: React.FC = () => {
                                         <div className="h-2 w-12 bg-gray-100 rounded"></div>
                                     </div>
                                     <span className="text-xs font-bold text-green-500">Safe</span>
+                                </motion.div>
+
+                                {/* Floating Notification: Backup Realizado */}
+                                <motion.div
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 2, duration: 0.5 }}
+                                    className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 z-20"
+                                >
+                                    <div className="bg-brand-purple/10 p-2 rounded-lg relative">
+                                        <Database size={16} className="text-brand-purple" />
+                                        <div className="absolute -top-1 -right-1 bg-green-500 rounded-full p-0.5 border-2 border-white">
+                                            <CheckCircle size={8} className="text-white" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="text-xs font-bold text-gray-800">Backup realizado</div>
+                                        <div className="text-[10px] text-gray-400">Hace 2 min</div>
+                                    </div>
                                 </motion.div>
                             </div>
 
