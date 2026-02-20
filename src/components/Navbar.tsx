@@ -233,20 +233,22 @@ const Navbar: React.FC = () => {
                                                     </div>
 
                                                     {/* Main Products Grid */}
-                                                    <div className="lg:col-span-5 p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-5 gap-0">
+                                                    <div className="lg:col-span-5 p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-0">
                                                         {products.map((prod, i) => (
                                                             <Link
                                                                 key={i}
                                                                 to={prod.href}
-                                                                className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-100' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-100' : ''}`}
+                                                                className={`group cursor-pointer lg:px-6 ${i % 2 === 0 && i !== 0 ? 'md:border-l border-gray-100' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-100' : ''} transition-all hover:bg-gray-50/50 rounded-xl lg:rounded-none p-4 lg:p-0`}
                                                                 onClick={() => setActiveMenu(null)}
                                                             >
-                                                                <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
-                                                                    {prod.icon}
+                                                                <div className="flex items-center gap-3 mb-2 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
+                                                                    <div className="p-1.5 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
+                                                                        {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-4 h-4' })}
+                                                                    </div>
                                                                     {prod.title}
                                                                 </div>
-                                                                <p className="text-xs text-gray-500 mb-4 h-8">{prod.desc}</p>
-                                                                <ul className="space-y-2">
+                                                                <p className="text-xs text-gray-500 mb-4 h-auto lg:h-8 leading-relaxed">{prod.desc}</p>
+                                                                <ul className="space-y-2 hidden lg:block">
                                                                     {prod.items.map((item, j) => (
                                                                         <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
                                                                     ))}
@@ -263,16 +265,16 @@ const Navbar: React.FC = () => {
                                                     <div className="col-span-1 border-r border-gray-100">
                                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por etapa</h4>
                                                         <ul className="space-y-3">
-                                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer">Grandes empresas</li>
-                                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer">Startups</li>
+                                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer transition-colors">Grandes empresas</li>
+                                                            <li className="text-gray-900 text-sm font-medium hover:text-[#635BFF] cursor-pointer transition-colors">Startups</li>
                                                         </ul>
                                                     </div>
-                                                    <div className="col-span-2 pl-8">
+                                                    <div className="col-span-1 md:col-span-2 pl-4 md:pl-8">
                                                         <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Por caso de uso</h4>
-                                                        <div className="grid grid-cols-2 gap-6">
+                                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                                                             {solutions.map((sol, i) => (
-                                                                <div key={i} className="flex items-center gap-2 text-gray-900 text-sm hover:text-[#635BFF] cursor-pointer font-medium">
-                                                                    {sol.icon && <span className="text-[#635BFF]">{sol.icon}</span>}
+                                                                <div key={i} className="flex items-center gap-2 text-gray-900 text-sm hover:text-[#635BFF] cursor-pointer font-medium transition-colors group">
+                                                                    {sol.icon && <span className="text-[#635BFF] group-hover:scale-110 transition-transform">{sol.icon}</span>}
                                                                     {sol.title}
                                                                 </div>
                                                             ))}
@@ -283,11 +285,13 @@ const Navbar: React.FC = () => {
 
                                             {/* Servicios Content */}
                                             {activeMenu === 'services' && (
-                                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
                                                     {/* Column 1 - Featured Side Column style */}
-                                                    <div className="bg-[#F6F9FC] p-8 lg:p-10 border-r border-gray-100 flex flex-col justify-center">
+                                                    <div className="bg-[#F6F9FC] p-8 lg:p-10 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col justify-center">
                                                         <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
-                                                            {services[0].icon}
+                                                            <div className="p-1.5 rounded-lg bg-white shadow-sm">
+                                                                {React.cloneElement(services[0].icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                                            </div>
                                                             <span className="font-bold text-lg tracking-tight">{services[0].title}</span>
                                                         </div>
                                                         <p className="text-sm text-gray-600 leading-relaxed mb-6">
@@ -299,33 +303,23 @@ const Navbar: React.FC = () => {
                                                         </button>
                                                     </div>
 
-                                                    {/* Column 2 - Main White Column style */}
-                                                    <div className="p-8 lg:p-10 bg-white border-r border-gray-100 text-left">
-                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors">
-                                                            {services[1].icon}
-                                                            {services[1].title}
+                                                    {/* Other Services Columns */}
+                                                    {[services[1], services[2]].map((svc, idx) => (
+                                                        <div key={idx} className={`p-8 lg:p-10 bg-white border-b md:border-b-0 ${idx === 0 ? 'md:border-r' : ''} border-gray-100 text-left hover:bg-gray-50/50 transition-colors cursor-pointer group`}>
+                                                            <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors group-hover:text-[#635BFF]">
+                                                                <div className="p-1.5 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
+                                                                    {React.cloneElement(svc.icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                                                </div>
+                                                                {svc.title}
+                                                            </div>
+                                                            <p className="text-xs text-gray-500 mb-4 h-auto md:h-8 leading-relaxed">{svc.desc}</p>
+                                                            <ul className="space-y-2 text-left hidden lg:block">
+                                                                {svc.items.map((item, j) => (
+                                                                    <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
+                                                                ))}
+                                                            </ul>
                                                         </div>
-                                                        <p className="text-xs text-gray-500 mb-4 h-8">{services[1].desc}</p>
-                                                        <ul className="space-y-2 text-left">
-                                                            {services[1].items.map((item, j) => (
-                                                                <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-
-                                                    {/* Column 3 - Main White Column style */}
-                                                    <div className="p-8 lg:p-10 bg-white text-left">
-                                                        <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors">
-                                                            {services[2].icon}
-                                                            {services[2].title}
-                                                        </div>
-                                                        <p className="text-xs text-gray-500 mb-4 h-8">{services[2].desc}</p>
-                                                        <ul className="space-y-2 text-left">
-                                                            {services[2].items.map((item, j) => (
-                                                                <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
+                                                    ))}
                                                 </div>
                                             )}
 
@@ -370,16 +364,22 @@ const Navbar: React.FC = () => {
                             <div className="flex flex-col space-y-8">
                                 <div>
                                     <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Productos</h3>
-                                    <div className="grid grid-cols-1 gap-2">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         {products.map((prod, i) => (
-                                            <div key={i} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
-                                                <div className="p-2 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
-                                                    {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                            <Link
+                                                key={i}
+                                                to={prod.href}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50/50 hover:bg-gray-50 transition-all cursor-pointer group border border-transparent hover:border-brand-pink/10"
+                                            >
+                                                <div className="p-2.5 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform">
+                                                    {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-6 h-6' })}
                                                 </div>
                                                 <div>
-                                                    <div className="font-semibold text-gray-900 text-sm">{prod.title}</div>
+                                                    <div className="font-bold text-gray-900 text-[15px]">{prod.title}</div>
+                                                    <div className="text-xs text-gray-500 mt-0.5">{prod.desc}</div>
                                                 </div>
-                                            </div>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
