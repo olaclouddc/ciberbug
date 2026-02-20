@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
                         <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-gray-500">
                             <div className="flex items-center gap-2 whitespace-nowrap">
                                 <Shield size={16} className="text-gray-400" />
-                                <span>Seguridad simplificada</span>
+                                <span>Seguridad fácil</span>
                             </div>
                             <div className="flex items-center gap-2 whitespace-nowrap">
                                 <Activity size={16} className="text-gray-400" />
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
                             </div>
                             <div className="flex items-center gap-2 whitespace-nowrap">
                                 <Bell size={16} className="text-gray-400" />
-                                <span>Notificaciones en tiempo real</span>
+                                <span>Real time</span>
                             </div>
                         </div>
                     </div>
