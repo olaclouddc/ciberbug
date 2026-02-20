@@ -161,7 +161,7 @@ const Hero: React.FC = () => {
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 2, duration: 0.5 }}
-                                    className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 z-20"
+                                    className="absolute top-[65%] -right-12 transform -translate-y-1/2 bg-white p-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-3 z-20"
                                 >
                                     <div className="bg-brand-purple/10 p-2 rounded-lg relative">
                                         <Database size={16} className="text-brand-purple" />
