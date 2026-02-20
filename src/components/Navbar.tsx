@@ -1,37 +1,43 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Box, Globe, Shield, Users, PieChart, Briefcase, Mail, Cloud, Terminal } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const products = [
     {
         title: "Página web",
         desc: "Asegura tu negocio online",
         icon: <Globe className="text-blue-500" />,
-        items: ["Analiza tu sitio web", "Protección Wordpress", "Certificados SSL", "Desinfección malware"]
+        items: ["Analiza tu sitio web", "Protección Wordpress", "Certificados SSL", "Desinfección malware"],
+        href: "/plataforma/web"
     },
     {
         title: "Cloud",
         desc: "Seguridad en la nube",
         icon: <Cloud className="text-sky-500" />,
-        items: ["Backup Cloud", "Monitorización servidores", "Administración cloud"]
+        items: ["Backup Cloud", "Monitorización servidores", "Administración cloud"],
+        href: "/plataforma/cloud"
     },
     {
         title: "Email",
         desc: "Seguridad y control",
         icon: <Mail className="text-brand-purple" />,
-        items: ["Relay SMTP", "Antispam", "Protección anti-phishing"]
+        items: ["Relay SMTP", "Antispam", "Protección anti-phishing"],
+        href: "/plataforma/email"
     },
     {
         title: "Identidad",
         desc: "Gestión de acceso seguro",
         icon: <Users className="text-green-500" />,
-        items: ["Phishing", "MFA"]
+        items: ["Phishing", "MFA"],
+        href: "/plataforma/identidad"
     },
     {
         title: "GDPR",
         desc: "Privacidad asegurada",
         icon: <Shield className="text-brand-pink" />,
-        items: ["Cumplimiento legal", "Protección de datos"]
+        items: ["Cumplimiento legal", "Protección de datos"],
+        href: "/plataforma/gdpr"
     }
 ];
 
@@ -115,13 +121,11 @@ const Navbar: React.FC = () => {
 
                 <div className="w-full flex items-center h-full">
                     {/* Logo - Left Aligned */}
-                    <motion.div
-                        className="flex-shrink-0 flex items-center cursor-pointer mr-6 md:mr-8 group/logo"
-                    >
+                    <Link to="/" className="flex-shrink-0 flex items-center cursor-pointer mr-6 md:mr-8 group/logo">
                         <span className="text-2xl font-black text-gray-900 tracking-tighter transition-all group-hover/logo:text-[#635BFF]">
                             ciberbug
                         </span>
-                    </motion.div>
+                    </Link>
 
                     {/* Desktop Menu - Left Aligned next to Logo */}
                     <div className="hidden md:flex space-x-1 lg:space-x-4">
@@ -231,7 +235,12 @@ const Navbar: React.FC = () => {
                                                     {/* Main Products Grid */}
                                                     <div className="lg:col-span-5 p-8 lg:p-10 grid grid-cols-2 lg:grid-cols-5 gap-0">
                                                         {products.map((prod, i) => (
-                                                            <div key={i} className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-100' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-100' : ''}`}>
+                                                            <Link
+                                                                key={i}
+                                                                to={prod.href}
+                                                                className={`group cursor-pointer px-6 ${i % 2 === 0 ? 'border-r border-gray-100' : ''} ${i < products.length - 1 ? 'lg:border-r border-gray-100' : ''}`}
+                                                                onClick={() => setActiveMenu(null)}
+                                                            >
                                                                 <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
                                                                     {prod.icon}
                                                                     {prod.title}
@@ -242,7 +251,7 @@ const Navbar: React.FC = () => {
                                                                         <li key={j} className="text-[13px] text-gray-500 hover:text-gray-900 cursor-pointer block transition-colors">{item}</li>
                                                                     ))}
                                                                 </ul>
-                                                            </div>
+                                                            </Link>
                                                         ))}
                                                     </div>
                                                 </div>
@@ -378,10 +387,11 @@ const Navbar: React.FC = () => {
                                 <div>
                                     <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4 px-2">Empresa</h3>
                                     <div className="flex flex-col space-y-4 px-2">
-                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Tarifas</a>
-                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Soluciones</a>
-                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Servicios</a>
-                                        <a href="#" className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Recursos</a>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Home Pagina</Link>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Tarifas</Link>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Soluciones</Link>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Servicios</Link>
+                                        <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-medium hover:text-brand-pink transition-colors">Recursos</Link>
                                     </div>
                                 </div>
 
