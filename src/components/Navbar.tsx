@@ -42,10 +42,10 @@ const products = [
 ];
 
 const solutions = [
-    { title: "E-commerce", icon: <Box /> },
-    { title: "SaaS", icon: <Briefcase /> },
-    { title: "Marketplaces", icon: <Users /> },
-    { title: "Creadores", icon: <PieChart /> },
+    { title: "E-commerce", icon: <Box className="text-pink-500" /> },
+    { title: "SaaS", icon: <Briefcase className="text-blue-500" /> },
+    { title: "Marketplaces", icon: <Users className="text-indigo-500" /> },
+    { title: "Creadores", icon: <PieChart className="text-orange-500" /> },
 ];
 
 const services = [
@@ -64,7 +64,7 @@ const services = [
     {
         title: "Servicios Profesionales",
         desc: "Consultoría y despliegue de soluciones a medida.",
-        icon: <Briefcase />,
+        icon: <Briefcase className="text-indigo-500" />,
         items: ["Auditoría de sistemas", "Migraciones cloud", "Ciber-resiliencia"]
     }
 ];
@@ -243,7 +243,9 @@ const Navbar: React.FC = () => {
                                                             >
                                                                 <div className="flex items-center gap-3 mb-2 text-gray-900 font-semibold group-hover:text-[#635BFF] transition-colors">
                                                                     <div className="p-1.5 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
-                                                                        {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-4 h-4' })}
+                                                                        {React.cloneElement(prod.icon as React.ReactElement<any>, {
+                                                                            className: `${(prod.icon as any).props?.className || ''} w-4 h-4`
+                                                                        })}
                                                                     </div>
                                                                     {prod.title}
                                                                 </div>
@@ -290,7 +292,9 @@ const Navbar: React.FC = () => {
                                                     <div className="bg-[#F6F9FC] p-8 lg:p-10 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col justify-center">
                                                         <div className="flex items-center gap-2 mb-3 text-[#635BFF]">
                                                             <div className="p-1.5 rounded-lg bg-white shadow-sm">
-                                                                {React.cloneElement(services[0].icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                                                {React.cloneElement(services[0].icon as React.ReactElement<any>, {
+                                                                    className: `${(services[0].icon as any).props?.className || ''} w-5 h-5`
+                                                                })}
                                                             </div>
                                                             <span className="font-bold text-lg tracking-tight">{services[0].title}</span>
                                                         </div>
@@ -308,7 +312,9 @@ const Navbar: React.FC = () => {
                                                         <div key={idx} className={`p-8 lg:p-10 bg-white border-b md:border-b-0 ${idx === 0 ? 'md:border-r' : ''} border-gray-100 text-left hover:bg-gray-50/50 transition-colors cursor-pointer group`}>
                                                             <div className="flex items-center gap-3 mb-3 text-gray-900 font-semibold transition-colors group-hover:text-[#635BFF]">
                                                                 <div className="p-1.5 rounded-lg bg-gray-50 group-hover:bg-white transition-colors">
-                                                                    {React.cloneElement(svc.icon as React.ReactElement<any>, { className: 'w-5 h-5' })}
+                                                                    {React.cloneElement(svc.icon as React.ReactElement<any>, {
+                                                                        className: `${(svc.icon as any).props?.className || ''} w-5 h-5`
+                                                                    })}
                                                                 </div>
                                                                 {svc.title}
                                                             </div>
@@ -373,7 +379,9 @@ const Navbar: React.FC = () => {
                                                 className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50/50 hover:bg-gray-50 transition-all cursor-pointer group border border-transparent hover:border-brand-pink/10"
                                             >
                                                 <div className="p-2.5 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform">
-                                                    {React.cloneElement(prod.icon as React.ReactElement<any>, { className: 'w-6 h-6' })}
+                                                    {React.cloneElement(prod.icon as React.ReactElement<any>, {
+                                                        className: `${(prod.icon as any).props?.className || ''} w-6 h-6`
+                                                    })}
                                                 </div>
                                                 <div>
                                                     <div className="font-bold text-gray-900 text-[15px]">{prod.title}</div>
